@@ -16,8 +16,8 @@
           />
         </div>
         <div>
-          <div class="text-xl font-semibold uppercase">{{ partner.name }}</div>
-          <div class="text-md opacity-60">{{ partner.type }}</div>
+          <div class="text-md font-semibold uppercase">{{ partner.name }}</div>
+          <div class="text-sm opacity-60">{{ partner.type }}</div>
         </div>
         <div class="list-col-wrap text-md w-full">
           <p>{{ partner.description }}</p>

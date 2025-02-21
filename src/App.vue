@@ -57,7 +57,7 @@ const pageTitle = computed(() => {
       </div>
       <div className="navbar-end  lg:flex ">
         <ul className="menu menu-horizontal  hidden lg:flex ">
-          <li><a>Our Company</a></li>
+          <li><a href="/our-company">Our Company</a></li>
           <li><a href="/partners">Partners</a></li>
           <li className="dropdown dropdown-hover dropdown-center">
             <a
@@ -110,6 +110,7 @@ const pageTitle = computed(() => {
     <div
       v-if="!isNotFound && pageTitle"
       className="w-full h-15 bg-primary flex items-center align-center"
+      data-aos="fade-in"
     >
       <div className="container mx-auto flex items-center align-center">
         <div className="w-full flex items-center align-center">
