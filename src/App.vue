@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import './assets/tailwind.css' // Import the Tailwind CSS file
 import { Icon } from '@iconify/vue'
 import { useRoute } from 'vue-router'
