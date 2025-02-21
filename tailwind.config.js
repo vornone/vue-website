@@ -6,6 +6,6 @@ module.exports = {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['light', 'dark', 'cupcake'], // Add themes you want to use
+    themes: ['light', 'dark', 'cupcake', 'forest'], // Add themes you want to use
   }, // Add DaisyUI plugin
 }
