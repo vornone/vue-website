@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import './assets/tailwind.css' // Import the Tailwind CSS file
 import { Icon } from '@iconify/vue'
 import { useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 AOS.init()
@@ -20,6 +20,25 @@ const pageTitle = computed(() => {
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (char) => char.toUpperCase())
 })
+
+// Theme state
+const isDarkTheme = ref(false)
+
+// Function to toggle theme
+const toggleTheme = () => {
+  isDarkTheme.value = !isDarkTheme.value
+  document.documentElement.setAttribute('data-theme', isDarkTheme.value ? 'dim' : 'emerald')
+  localStorage.setItem('theme', isDarkTheme.value ? 'dim' : 'emerald')
+}
+
+// Load theme preference from localStorage on mount
+onMounted(() => {
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme) {
+    isDarkTheme.value = savedTheme === 'dim'
+    document.documentElement.setAttribute('data-theme', savedTheme)
+  }
+})
 </script>
 
 <template>
@@ -29,7 +48,12 @@ const pageTitle = computed(() => {
       <div className="navbar-start gap-2">
         <label class="swap swap-rotate">
           <!-- this hidden checkbox controls the state -->
-          <input type="checkbox" class="theme-controller" value="dim" />
+          <input
+            type="checkbox"
+            class="theme-controller"
+            :checked="isDarkTheme"
+            @change="toggleTheme"
+          />
 
           <!-- sun icon -->
           <svg
@@ -60,7 +84,7 @@ const pageTitle = computed(() => {
           <li><a href="/our-company">Our Company</a></li>
           <li><a href="/partners">Partners</a></li>
           <li className="dropdown dropdown-hover dropdown-center">
-            <a
+            <a href="/services"
               >Services <span><Icon icon="mdi-light:chevron-down" class="h-5 w-5" /></span
             ></a>
             <ul className="menu menu-sm dropdown-content bg-base-100  w-52 rounded-box shadow">
