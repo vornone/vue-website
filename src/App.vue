@@ -6,6 +6,8 @@ import { useRoute } from 'vue-router'
 import { computed, ref, onMounted } from 'vue'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
+import grcLogo from '@/assets/logos/grc_logo_frame.png'
+
 AOS.init()
 const route = useRoute()
 
@@ -77,7 +79,8 @@ onMounted(() => {
             />
           </svg>
         </label>
-        <a className="btn btn-ghost text-xl" href="/">grc-enterprise</a>
+        <a href="/"><img :src="grcLogo" alt="grc-logo" class="h-12 ml-10" /></a>
+        <!-- <a className="btn btn-ghost text-xl" href="/">grc-enterprise</a> -->
       </div>
       <div className="navbar-end  lg:flex ">
         <ul className="menu menu-horizontal  hidden lg:flex ">
@@ -89,19 +92,24 @@ onMounted(() => {
             ></a>
             <ul className="menu menu-sm dropdown-content bg-base-100  w-52 rounded-box shadow">
               <li>
-                <a><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology</a>
+                <a href="/services/information-technology"
+                  ><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology</a
+                >
               </li>
               <li>
-                <a><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a>
+                <a href="/services/construction-and-design"
+                  ><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a
+                >
               </li>
               <li>
-                <a><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a>
+                <a href="/services/logistics-and-supply-chain"
+                  ><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a
+                >
               </li>
             </ul>
           </li>
-
-          <li><a>Contact</a></li>
-          <li><a>About us</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <div class="dropdown dropdown-left lg:hidden">
           <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
@@ -124,9 +132,11 @@ onMounted(() => {
             tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li><a>Homepage</a></li>
-            <li><a>Portfolio</a></li>
-            <li><a>About</a></li>
+            <li><a href="/our-company">Our Company</a></li>
+            <li><a href="/partners">Partners</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -138,7 +148,9 @@ onMounted(() => {
     >
       <div className="container mx-auto flex items-center align-center">
         <div className="w-full flex items-center align-center">
-          <h1 className="text-3xl font-bold text-gray-700 text-center w-full">{{ pageTitle }}</h1>
+          <h1 className="text-3xl font-bold text-base-100 text-center w-full">
+            {{ pageTitle }}
+          </h1>
         </div>
       </div>
     </div>
@@ -149,14 +161,15 @@ onMounted(() => {
     <footer
       class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10"
     >
-      <nav class="grid grid-flow-col gap-4" data-aos="fade-up">
-        <a class="link link-hover">About us</a>
-        <a class="link link-hover">Contact</a>
-        <a class="link link-hover">Jobs</a>
-        <a class="link link-hover">Press kit</a>
+      <nav class="grid grid-flow-col gap-4" v-motion-fade-visible>
+        <a class="link link-hover" href="/">Home</a>
+        <a class="link link-hover" href="/partners">Partners</a>
+        <a class="link link-hover" href="/services">Services</a>
+        <a class="link link-hover" href="/contact">Contact</a>
+        <a class="link link-hover" href="/about">About</a>
       </nav>
       <nav>
-        <div class="grid grid-flow-col gap-4" data-aos="fade-up">
+        <div class="grid grid-flow-col gap-4" v-motion-fade-visible>
           <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"

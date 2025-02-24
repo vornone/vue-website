@@ -1,6 +1,6 @@
 <template lang="">
   <div>
-    <h1>Logistic Supplychain</h1>
+    <h1>Logistic Supply chain</h1>
   </div>
 </template>
 <script>

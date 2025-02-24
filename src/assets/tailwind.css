@@ -3,21 +3,29 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
   themes:
-    light --default,
+    light,
     dark --prefersdark,
     cupcake,
     forest,
     garden,
-    emerald,
+    emerald --default,
     dim;
 }
 @plugin "daisyui/theme" {
-  name: 'forest';
-
+  name: 'emerald';
   /* border radius */
   --radius-selector: 1rem;
   --radius-field: 0.25rem;
   --radius-box: 0.5rem;
+  --color-primary: #6e8c6d;
+}
+@plugin "daisyui/theme" {
+  name: 'dim';
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --color-primary: #9ba685;
 }
 @theme {
   --font-sans: Trirong, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
