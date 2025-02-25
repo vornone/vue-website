@@ -1,5 +1,4 @@
 import './assets/main.css'
-import { MotionPlugin } from '@vueuse/motion'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

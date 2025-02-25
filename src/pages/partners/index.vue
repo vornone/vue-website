@@ -111,20 +111,6 @@ export default {
           description: `Working with CIRD amplifies our efforts in rural development and research. Their expertise in rural challenges and solutions supports our mission to deploy technology and data analytics for rural upliftment, enhancing our impact on these communities.`,
         },
         {
-          name: 'MINISTRY OF AGRICULTURE, FORESTRY AND FISHERIES (MAFF)',
-          type: 'Government Agency',
-          image: new URL('@/assets/logos/maff.jpg', import.meta.url).href,
-          website: 'https://aoarchitectsdesign.com/',
-          description: `This partnership strengthens our agricultural initiatives, enabling access to the latest agronomic research and sustainable farming practices. MAFF's support helps us integrate cutting-edge technologies into Cambodia's agriculture sector, promoting efficiency and sustainability.`,
-        },
-        {
-          name: 'MINISTRY OF COMMERCE (MOC)',
-          type: 'Government Agency',
-          image: new URL('@/assets/logos/moc.jpg', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
-          description: `Partnering with the Ministry of Commerce enhances our ability to navigate and influence the trade and commerce landscape towards sustainability. The MoC's support is instrumental in facilitating our export-import activities, ensuring they align with national trade policies and standards. This partnership enables us to advocate for and implement sustainable business practices across international trade channels, amplifying our commitment to environmentally responsible commerce.`,
-        },
-        {
           name: 'Canadian Chamber of Commerce in Cambodia (CanCham)',
           type: 'Nonprofit organization',
           image: new URL('@/assets/logos/cancham.png', import.meta.url).href,

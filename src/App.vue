@@ -46,7 +46,7 @@ onMounted(() => {
 <template>
   <div class="min-h-screen flex flex-col">
     <header></header>
-    <div className="navbar bg-base-100 shadow-md px-4 z-99">
+    <div className="navbar bg-base-100 shadow-md px-4 z-99 sticky top-0">
       <div className="navbar-start gap-2">
         <label class="swap swap-rotate">
           <!-- this hidden checkbox controls the state -->
@@ -134,7 +134,26 @@ onMounted(() => {
           >
             <li><a href="/our-company">Our Company</a></li>
             <li><a href="/partners">Partners</a></li>
-            <li><a href="/services">Services</a></li>
+            <li>
+              <a href="/services"> Services</a>
+              <ul className="p-2">
+                <li>
+                  <a href="/services/information-technology"
+                    ><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology</a
+                  >
+                </li>
+                <li>
+                  <a href="/services/construction-and-design"
+                    ><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a
+                  >
+                </li>
+                <li>
+                  <a href="/services/logistics-and-supply-chain"
+                    ><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a
+                  >
+                </li>
+              </ul>
+            </li>
             <li><a href="/about">About us</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
@@ -148,13 +167,13 @@ onMounted(() => {
     >
       <div className="container mx-auto flex items-center align-center">
         <div className="w-full flex items-center align-center">
-          <h1 className="text-3xl font-bold text-base-100 text-center w-full">
+          <h1 className="lg:text-3xl text-xl font-bold text-white text-center w-full">
             {{ pageTitle }}
           </h1>
         </div>
       </div>
     </div>
-    <main className="container mx-auto flex-grow">
+    <main className=" flex mx-auto flex-grow  w-full ">
       <RouterView></RouterView>
     </main>
 

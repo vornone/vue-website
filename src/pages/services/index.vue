@@ -1,6 +1,6 @@
-<template lang="">
+<template>
   <div className="flex flex-col gap-5 lg:p-10 p-4">
-    <h1 data-aos="fade-up" className="text-lg   text-center w-full">
+    <h1 data-aos="fade-up" className="lg:text-lg   text-center w-full">
       We're committed to excellence across a variety of domains. Our services are designed to meet
       the diverse needs of our clients, ensuring quality, efficiency, and innovation. Click on any
       of the images below to learn more about our specific offerings and how we can assist in
@@ -22,9 +22,8 @@
         <div className="card-body">
           <h2 className="card-title">
             {{ service.name }}
-            <div className="badge badge-secondary">NEW</div>
           </h2>
-          <p>
+          <p className="opacity-60">
             {{ service.description }}
           </p>
           <div className="card-actions justify-end">
