@@ -167,7 +167,7 @@ onMounted(() => {
     >
       <div className="container mx-auto flex items-center align-center">
         <div className="w-full flex items-center align-center">
-          <h1 className="lg:text-3xl text-xl font-bold text-white text-center w-full">
+          <h1 className="lg:text-3xl text-xl font-bold text-base-100 text-center w-full">
             {{ pageTitle }}
           </h1>
         </div>

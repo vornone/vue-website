@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col w-full gap-5" data-aos="fade-in">
-    <div
+  <div class="flex flex-col w-full h-full gap-5" data-aos="fade-in">
+    <!-- <div
       class="hero w-full h-150"
       style="
         background-image: url(https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=2400);
@@ -17,16 +17,16 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <div className=" flex flex-col gap-10 lg:p-10 p-4  w-full">
-      <h1 className="text-3xl text-center w-full font-bold">What we offer</h1>
+      <h1 className="text-3xl text-center w-full ">What we offer</h1>
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         style="grid-auto-rows: 1fr"
       >
         <ServiceCard :serviceDetail="services" />
       </div>
-      <h1 className="text-3xl text-center w-full font-bold" data-aos="fade-up">Our Designers</h1>
+      <h1 className="text-3xl text-center w-full " data-aos="fade-up">Our Designers</h1>
       <ul
         class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary"
         data-aos="fade-up"
