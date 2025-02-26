@@ -97,7 +97,7 @@ onMounted(() => {
             />
           </svg>
         </label>
-        <a href="/"><img :src="grcLogo" alt="grc-logo" class="h-12 ml-10" /></a>
+        <a href="/"><img :src="grcLogo" alt="grc-logo" class="h-12 lg:ml-10 ml-2" /></a>
         <!-- <a class="btn btn-ghost text-xl" href="/">grc-enterprise</a> -->
       </div>
       <div class="navbar-end lg:flex">
@@ -211,7 +211,7 @@ onMounted(() => {
           </div>
           <div class="drawer-side">
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-            <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+            <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
               <li><a href="/our-company">Our Company</a></li>
               <li><a href="/partners">Partners</a></li>
               <li>
