@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full h-full gap-10 lg:p-10 p-4" data-aos="fade-in">
+  <div class="flex flex-col w-full h-full gap-10 lg:p-10 p-4 items-center" data-aos="fade-in">
     <div class="flex w-full">
       <div
         class="hero w-full h-150 rounded-lg overflow-hidden shadow-md shadow-primary"
@@ -23,9 +23,9 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-10 w-full items-center">
+    <div class="flex flex-col gap-10 lg:w-3/4 items-center">
       <h1 class="text-3xl text-center w-full">What we offer</h1>
-      <h2 class="text-center w-1/2">
+      <h2 class="text-center lg:w-1/2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
         porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
         et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
@@ -36,7 +36,7 @@
       </div>
       <div class="divider"></div>
       <h1 class="text-3xl text-center w-full" id="designers" data-aos="fade-up">Our Designers</h1>
-      <h2 data-aos="fade-up" class="text- text-center w-1/2">
+      <h2 data-aos="fade-up" class="text- text-center lg:w-1/2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
         porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
         et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie

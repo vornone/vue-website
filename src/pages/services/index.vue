@@ -6,7 +6,7 @@
       of the images below to learn more about our specific offerings and how we can assist in
       achieving your objectives.
     </h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-3/4">
       <div
         v-for="(service, index) in serviceDetail"
         :key="service.name"
