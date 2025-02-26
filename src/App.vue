@@ -3,11 +3,25 @@ import { RouterLink, RouterView } from 'vue-router'
 import './assets/tailwind.css' // Import the Tailwind CSS file
 import { Icon } from '@iconify/vue'
 import { useRoute } from 'vue-router'
-import { computed, ref, onMounted } from 'vue'
+import { computed, ref, onMounted, watch } from 'vue'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 import grcLogo from '@/assets/logos/grc_logo_frame.png'
+import { useI18n } from 'vue-i18n'
+import { setLanguage } from '@/functions/setLanguage'
+const { locale } = useI18n()
+const currentLocale = ref(localStorage.getItem('lang') || 'en')
 
+// Define supported locales type
+type SupportedLocale = 'en' | 'kh'
+
+// Create a ref to store the selected locale
+const selectedLocale = ref<SupportedLocale>('en')
+
+// Function to handle language change
+const handleLanguageChange = () => {
+  setLanguage(selectedLocale.value)
+}
 AOS.init()
 const route = useRoute()
 
@@ -36,6 +50,10 @@ const toggleTheme = () => {
 // Load theme preference from localStorage on mount
 onMounted(() => {
   const savedTheme = localStorage.getItem('theme')
+  const savedLocale = localStorage.getItem('locale') as SupportedLocale
+  if (savedLocale && (savedLocale === 'en' || savedLocale === 'kh')) {
+    selectedLocale.value = savedLocale
+  }
   if (savedTheme) {
     isDarkTheme.value = savedTheme === 'dim'
     document.documentElement.setAttribute('data-theme', savedTheme)
@@ -111,7 +129,18 @@ onMounted(() => {
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
-        <div class="dropdown dropdown-left lg:hidden">
+        <select
+          defaultValue="en"
+          className="select select-primary lg:w-25 w-30 lg:ml-10 font-semibold"
+          id="language"
+          v-model="selectedLocale"
+          @change="handleLanguageChange"
+        >
+          <option value="en">English</option>
+          <option value="kh">ភាសាខ្មែរ</option>
+        </select>
+
+        <div class="dropdown dropdown-left hidden">
           <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +159,7 @@ onMounted(() => {
           </div>
           <ul
             tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-70 p-2 shadow"
           >
             <li><a href="/our-company">Our Company</a></li>
             <li><a href="/partners">Partners</a></li>
@@ -157,6 +186,59 @@ onMounted(() => {
             <li><a href="/about">About us</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
+        </div>
+        <div class="drawer drawer-end lg:hidden p-0 w-10 ml-2">
+          <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <!-- Page content here -->
+            <label for="my-drawer" class="btn btn-ghost btn-circle drawer-button">
+              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h7"
+                  />
+                </svg></div
+            ></label>
+          </div>
+          <div class="drawer-side">
+            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+              <li><a href="/our-company">Our Company</a></li>
+              <li><a href="/partners">Partners</a></li>
+              <li>
+                <a href="/services"> Services</a>
+                <ul class="p-2">
+                  <li>
+                    <a href="/services/construction-and-design"
+                      ><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/services/information-technology"
+                      ><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information
+                      Technology</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/services/logistics-and-supply-chain"
+                      ><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

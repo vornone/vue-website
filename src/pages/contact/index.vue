@@ -3,9 +3,9 @@
     <div class="hero">
       <div class="hero-content flex-col lg:flex-row lg:gap-20">
         <div class="text-center lg:text-left lg:w-1/2">
-          <h1 class="lg:text-3xl text-xl font-light">
-            Contact <strong class="font-bold">GRC Enterprise </strong>
-            Today:
+          <h1 class="lg:text-3xl text-xl font-regular">
+            {{ $t('contact') }} <strong class="font-bold">GRC Enterprise </strong>
+            {{ $t('today') }}:
           </h1>
           <p class="py-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies sollicitudin mi
@@ -23,7 +23,7 @@
               <input type="email" class="input" placeholder="Name" />
               <label class="fieldset-label text-primary font-bold">Email</label>
               <input type="email" class="input" placeholder="Email" />
-              <label class="fieldset-label text-primary font-bold">your message</label>
+              <label class="fieldset-label text-primary font-bold">your {{ $t('message') }}</label>
               <textarea class="textarea" placeholder="Message"></textarea>
               <button class="btn btn-neutral mt-4">Submit</button>
             </fieldset>

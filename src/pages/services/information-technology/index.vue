@@ -134,7 +134,7 @@ export default defineComponent({
           image:
             'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800',
           url: 'https://example.com/service1',
-          tags: ['Design', 'Construction'],
+          tags: ['IT', 'Solution'],
         },
         {
           name: 'Application Development',
@@ -143,7 +143,7 @@ export default defineComponent({
           image:
             'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
-          tags: ['Design', 'Construction'],
+          tags: ['Design', 'IT', 'Programming'],
         },
         {
           name: 'Network Security',
@@ -152,7 +152,7 @@ export default defineComponent({
           image:
             'https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
-          tags: ['Design', 'Construction'],
+          tags: ['Programming', 'Network', 'Security'],
         },
         {
           name: 'Data Analytics and BI',
@@ -161,7 +161,7 @@ export default defineComponent({
           image:
             'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
-          tags: ['Design', 'Construction'],
+          tags: ['Design', 'Solution'],
         },
         {
           name: 'Cloud Services',
@@ -169,7 +169,7 @@ export default defineComponent({
           image:
             'https://images.unsplash.com/photo-1605907126332-53b63528ce99?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
-          tags: ['Design', 'Construction'],
+          tags: ['Security', 'Network', 'Programming'],
         },
         {
           name: 'Cybersecurity Enhancements',
@@ -178,7 +178,7 @@ export default defineComponent({
           image:
             'https://images.unsplash.com/photo-1590065707046-4fde65275b2e?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
-          tags: ['Design', 'Fitting Out', 'Construction'],
+          tags: ['Security', 'Programming', 'Network'],
         },
         {
           name: 'Systems Integration',
@@ -187,16 +187,16 @@ export default defineComponent({
           image:
             'https://images.unsplash.com/photo-1498409785966-ab341407de6e?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
-          tags: ['Design', 'Fitting Out', 'Construction'],
+          tags: ['Engineering', 'Network', 'Security'],
         },
         {
           name: 'Managed IT Services',
           description:
             'Full-service IT management, including monitoring, support, and maintenance.',
           image:
-            'https://images.unsplash.com/photo-1509805225007-73e8ba4b5be8?auto=format&fit=crop&w=800',
+            'https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
-          tags: ['Design', 'Fitting Out', 'Construction'],
+          tags: ['IT', 'Programming', 'Security'],
         },
         // Add more services as needed
       ] as Service[], // Explicitly type the array
