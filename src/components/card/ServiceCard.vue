@@ -1,14 +1,18 @@
 <template>
   <div
-    class="card bg-base-100 w-full shadow-sm shadow-primary"
+    class="card bg-base-100 w-full shadow-md shadow-primary"
     v-for="(service, index) in serviceDetail"
     :key="service.name"
   >
     <figure>
-      <img :src="service.image" alt="Shoes" class="w-full h-60 object-cover object-center" />
+      <img
+        :src="service.image"
+        alt="Shoes"
+        class="w-full lg:h-60 h-40 object-cover object-center"
+      />
     </figure>
-    <div class="card-body">
-      <h2 class="card-title">
+    <div class="card-body lg:p-8 p-5">
+      <h2 class="card-title text-primary">
         {{ service.name }}
       </h2>
       <p class="opacity-60">

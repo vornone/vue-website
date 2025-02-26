@@ -1,36 +1,48 @@
 <template>
-  <div class="flex flex-col w-full h-full gap-5" data-aos="fade-in">
-    <!-- <div
-      class="hero w-full h-150"
-      style="
-        background-image: url(https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=2400);
-      "
-    >
-      <div class="hero-overlay"></div>
-      <div class="hero-content text-neutral-content text-center">
-        <div class="max-w-full">
-          <p class="mb-5 text-white">
-            orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt volutpat nisl a
-            blandit. Cras id diam maximus, consectetur arcu eget, venenatis nisl. Nunc malesuada,
-            enim et mattis vestibulum, justo diam iaculis sem, sed scelerisque ipsum ex non leo. Sed
-            luctus nulla quis est fringilla maximus.
-          </p>
+  <div class="flex flex-col w-full h-full gap-10 lg:p-10 p-4" data-aos="fade-in">
+    <div class="flex w-full">
+      <div
+        class="hero w-full h-150 rounded-lg overflow-hidden shadow-md shadow-primary"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=2400);
+        "
+      >
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-neutral-content text-center">
+          <div class="max-w-full">
+            <p class="mb-5 text-white">
+              orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt volutpat nisl
+              a blandit. Cras id diam maximus, consectetur arcu eget, venenatis nisl. Nunc
+              malesuada, enim et mattis vestibulum, justo diam iaculis sem, sed scelerisque ipsum ex
+              non leo. Sed luctus nulla quis est fringilla maximus.
+            </p>
+            <button class="btn btn-primary text-base-100" @click="scrollToSection('designers')">
+              Our Designers
+            </button>
+          </div>
         </div>
       </div>
-    </div> -->
-    <div className=" flex flex-col gap-10 lg:p-10 p-4  w-full">
-      <h1 className="text-3xl text-center w-full ">What we offer</h1>
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-        style="grid-auto-rows: 1fr"
-      >
+    </div>
+    <div class="flex flex-col gap-10 w-full">
+      <h1 class="text-3xl text-center w-full">What we offer</h1>
+      <h2 class="text- text-center w-full">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
+        porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
+        et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
+        placerat. Mauris lobortis eleifend maximus.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" style="grid-auto-rows: 1fr">
         <ServiceCard :serviceDetail="services" />
       </div>
-      <h1 className="text-3xl text-center w-full " data-aos="fade-up">Our Designers</h1>
-      <ul
-        class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary"
-        data-aos="fade-up"
-      >
+      <div class="divider"></div>
+      <h1 class="text-3xl text-center w-full" id="designers" data-aos="fade-up">Our Designers</h1>
+      <h2 data-aos="fade-up" class="text- text-center w-full">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
+        porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
+        et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
+        placerat. Mauris lobortis eleifend maximus.
+      </h2>
+      <ul class="list bg-base-100 rounded-box shadow-md shadow-primary" data-aos="fade-up">
         <li
           v-for="subsidiary in subsidiaries"
           :key="subsidiary.name"
@@ -64,9 +76,15 @@ import 'aos/dist/aos.css'
 import AOS from 'aos'
 import ServiceCard from '@/components/card/ServiceCard.vue'
 import type { Service } from '@/types/service'
+import { scrollToSection } from '@/functions/scrollToElement'
 AOS.init()
 
 export default defineComponent({
+  methods: {
+    scrollToSection(section: string) {
+      scrollToSection(section)
+    },
+  },
   name: 'App',
   components: { ServiceCard },
   data() {
@@ -110,7 +128,8 @@ export default defineComponent({
           name: 'Master Plan Design',
           description:
             'Our creative process encompasses multiple phases, combining space, geometry, and artistry. We aim to establish the needs and foundations necessary for creating a livable space using specific solutions and ingenuity.',
-          image: 'https://images.unsplash.com/photo-1524666037164-2f32a6c1dfea',
+          image:
+            'https://images.unsplash.com/photo-1524666037164-2f32a6c1dfea?auto=format&fit=crop&w=800',
           url: 'https://example.com/service1',
           tags: ['Design', 'Construction'],
         },
@@ -118,7 +137,8 @@ export default defineComponent({
           name: 'Architectural Design',
           description:
             'We have directly proposal masterplan project for our client. As our expertise aligns with our clients’ needs for flexibility of design, scalability and accuracy of cost estimation, and in-depth knowledge of real estate development trends.',
-          image: 'https://images.unsplash.com/photo-1614595737766-4d7e1fd1406f',
+          image:
+            'https://images.unsplash.com/photo-1614595737766-4d7e1fd1406f?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
           tags: ['Design', 'Construction'],
         },
@@ -153,7 +173,8 @@ export default defineComponent({
           name: 'Interior Decor Fitting Out',
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet luctus magna, porta dictum enim dapibus et. Aliquam volutpat iaculis porttitor. Aenean quis rhoncus nunc. Nullam vitae urna arcu. Mauris sapien nisi, hendrerit eget dignissim sed, pretium nec ligula.',
-          image: 'https://images.unsplash.com/photo-1509805225007-73e8ba4b5be8',
+          image:
+            'https://images.unsplash.com/photo-1509805225007-73e8ba4b5be8?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',
           tags: ['Design', 'Fitting Out', 'Construction'],
         },

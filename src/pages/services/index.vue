@@ -1,34 +1,35 @@
 <template>
-  <div className="flex flex-col gap-5 lg:p-10 p-4">
-    <h1 data-aos="fade-up" className="lg:text-lg   text-center w-full">
+  <div class="flex flex-col gap-5 lg:p-10 p-4">
+    <h1 data-aos="fade-up" class="lg:text-lg text-center w-full">
       We're committed to excellence across a variety of domains. Our services are designed to meet
       the diverse needs of our clients, ensuring quality, efficiency, and innovation. Click on any
       of the images below to learn more about our specific offerings and how we can assist in
       achieving your objectives.
     </h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <div
-        className="card bg-base-100 w-full shadow-sm  shadow-primary"
         v-for="(service, index) in serviceDetail"
         :key="service.name"
+        class="card bg-base-100 w-full shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out"
+        :class="{ 'shadow-primary': true }"
         data-aos="fade-up"
         data-aos-duration="500"
         data-aos-easing="ease-in-sine"
         :data-aos-delay="index * 200"
       >
         <figure>
-          <img :src="service.image" alt="Shoes" class="w-full h-50 object-cover" />
+          <img :src="service.image" :alt="service.name" class="w-full h-50 object-cover" />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">
+        <div class="card-body">
+          <h2 class="card-title">
             {{ service.name }}
           </h2>
-          <p className="opacity-60">
+          <p class="opacity-60">
             {{ service.description }}
           </p>
-          <div className="card-actions justify-end">
-            <div className="btn btn-primary text-base-100  " v-on:click="goToService(service.url)">
-              go to service
+          <div class="card-actions justify-end">
+            <div class="btn btn-primary text-base-100" @click="goToService(service.url)">
+              Go to service
             </div>
           </div>
         </div>
@@ -36,11 +37,15 @@
     </div>
   </div>
 </template>
+
 <script>
 import 'aos/dist/aos.css'
 import AOS from 'aos'
-AOS.init()
+
 export default {
+  mounted() {
+    AOS.init()
+  },
   methods: {
     goToService(name) {
       this.$router.push('services/' + name)
@@ -82,4 +87,3 @@ export default {
   },
 }
 </script>
-<style lang=""></style>

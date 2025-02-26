@@ -1,19 +1,19 @@
 <template lang="">
-  <div className="flex flex-col gap-5 lg:p-10 p-4">
-    <h1 className="text-3xl text-center w-full" data-aos="fade-up">Our Core Team</h1>
-    <h2 data-aos="fade-up" className="text- text-center w-full">
+  <div class="flex flex-col gap-5 lg:p-10 p-4">
+    <h1 class="text-3xl text-center w-full" data-aos="fade-up">Our Core Team</h1>
+    <h2 data-aos="fade-up" class="text- text-center w-full">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate porta,
       nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero, et
       finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie placerat.
       Mauris lobortis eleifend maximus.
     </h2>
     <div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
       style="grid-auto-rows: 1fr"
       data-aos="fade-up"
     >
       <div
-        className="card bg-base-100 w-full shadow-sm shadow-primary lg:p-4 p-2"
+        class="card bg-base-100 w-full shadow-sm shadow-primary lg:p-4 p-2"
         v-for="(member, index) in teamDetails"
         :key="member.name"
       >
@@ -23,11 +23,11 @@
             class="h-50 w-50 object-cover rounded-full border-primary border-1"
           />
         </figure>
-        <div className="card-body text-center items-center">
-          <h2 className="card-title text-primary">
+        <div class="card-body text-center items-center">
+          <h2 class="card-title text-primary">
             {{ member.name }}
           </h2>
-          <p className="text-sm opacity-60">
+          <p class="text-sm opacity-60">
             {{ member.title }}
           </p>
           <p>
