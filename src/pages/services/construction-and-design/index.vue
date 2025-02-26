@@ -68,6 +68,9 @@
         </li>
       </ul>
     </div>
+    <h2 class="lg:text-3xl text-center w-full my-5 lg:my-10" data-aos="fade-up">
+      Ensuring it fits your budget while meeting your specific construction and design requirements.
+    </h2>
   </div>
 </template>
 <script lang="ts">
