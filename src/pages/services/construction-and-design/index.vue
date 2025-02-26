@@ -23,9 +23,9 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-10 w-full">
+    <div class="flex flex-col gap-10 w-full items-center">
       <h1 class="text-3xl text-center w-full">What we offer</h1>
-      <h2 class="text- text-center w-full">
+      <h2 class="text-center w-1/2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
         porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
         et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
@@ -36,7 +36,7 @@
       </div>
       <div class="divider"></div>
       <h1 class="text-3xl text-center w-full" id="designers" data-aos="fade-up">Our Designers</h1>
-      <h2 data-aos="fade-up" class="text- text-center w-full">
+      <h2 data-aos="fade-up" class="text- text-center w-1/2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
         porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
         et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie

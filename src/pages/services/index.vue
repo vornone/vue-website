@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-5 lg:p-10 p-4">
-    <h1 data-aos="fade-up" class="lg:text-lg text-center w-full">
+  <div class="flex flex-col gap-5 lg:p-10 p-4 items-center">
+    <h1 data-aos="fade-up" class="lg:text-lg text-center w-1/2">
       We're committed to excellence across a variety of domains. Our services are designed to meet
       the diverse needs of our clients, ensuring quality, efficiency, and innovation. Click on any
       of the images below to learn more about our specific offerings and how we can assist in
