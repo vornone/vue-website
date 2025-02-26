@@ -102,7 +102,7 @@ onMounted(() => {
       </div>
       <div class="navbar-end lg:flex">
         <ul class="menu menu-horizontal hidden lg:flex">
-          <li><a href="/our-company">Our Company</a></li>
+          <li><a href="/">Our Company</a></li>
           <li><a href="/partners">Partners</a></li>
           <li class="dropdown dropdown-hover dropdown-center">
             <a href="/services"
@@ -161,7 +161,7 @@ onMounted(() => {
             tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-70 p-2 shadow"
           >
-            <li><a href="/our-company">Our Company</a></li>
+            <li><a href="/">Our Company</a></li>
             <li><a href="/partners">Partners</a></li>
             <li>
               <a href="/services"> Services</a>
@@ -212,7 +212,7 @@ onMounted(() => {
           <div class="drawer-side">
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
             <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
-              <li><a href="/our-company">Our Company</a></li>
+              <li><a href="/">Our Company</a></li>
               <li><a href="/partners">Partners</a></li>
               <li>
                 <a href="/services"> Services</a>
