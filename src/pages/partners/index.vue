@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col gap-4 lg:p-10 p-4">
-    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide">Our Valued Partners</li>
+  <div class="flex flex-col gap-4 lg:p-10 p-4 items-center">
+    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide lg:w-3/4">Our Valued Partners</li>
     <ul
-      class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary"
+      class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary lg:w-3/4"
       data-aos="fade-up"
     >
       <li
@@ -29,9 +29,9 @@
         </div>
       </li>
     </ul>
-    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide">Our Valued Subsidiaries</li>
+    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide lg:w-3/4">Our Valued Subsidiaries</li>
     <ul
-      class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary"
+      class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary lg:w-3/4"
       data-aos="fade-up"
     >
       <li
