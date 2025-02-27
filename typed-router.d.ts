@@ -22,11 +22,13 @@ declare module 'vue-router/auto-routes' {
     '/[...catchAll]': RouteRecordInfo<'/[...catchAll]', '/:catchAll(.*)', { catchAll: ParamValue<true> }, { catchAll: ParamValue<false> }>,
     '/about/': RouteRecordInfo<'/about/', '/about', Record<never, never>, Record<never, never>>,
     '/contact/': RouteRecordInfo<'/contact/', '/contact', Record<never, never>, Record<never, never>>,
+    '/homepage/': RouteRecordInfo<'/homepage/', '/homepage', Record<never, never>, Record<never, never>>,
     '/our-company/': RouteRecordInfo<'/our-company/', '/our-company', Record<never, never>, Record<never, never>>,
     '/partners/': RouteRecordInfo<'/partners/', '/partners', Record<never, never>, Record<never, never>>,
     '/services/': RouteRecordInfo<'/services/', '/services', Record<never, never>, Record<never, never>>,
     '/services/construction-and-design/': RouteRecordInfo<'/services/construction-and-design/', '/services/construction-and-design', Record<never, never>, Record<never, never>>,
     '/services/information-technology/': RouteRecordInfo<'/services/information-technology/', '/services/information-technology', Record<never, never>, Record<never, never>>,
+    '/services/information-technology/[id]': RouteRecordInfo<'/services/information-technology/[id]', '/services/information-technology/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/services/logistics-and-supply-chain/': RouteRecordInfo<'/services/logistics-and-supply-chain/', '/services/logistics-and-supply-chain', Record<never, never>, Record<never, never>>,
   }
 }

@@ -7,10 +7,7 @@ import { computed, ref, onMounted, watch } from 'vue'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 import grcLogo from '@/assets/logos/grc_logo_frame.png'
-import { useI18n } from 'vue-i18n'
 import { setLanguage } from '@/functions/setLanguage'
-const { locale } = useI18n()
-const currentLocale = ref(localStorage.getItem('lang') || 'en')
 
 // Define supported locales type
 type SupportedLocale = 'en' | 'kh'
@@ -28,15 +25,22 @@ const route = useRoute()
 const isNotFound = computed(() => {
   return route.name === '/[...catchAll]'
 })
-
 const pageTitle = computed(() => {
   const segments = route.path.split('/').filter(Boolean) // Remove empty segments
+
+  // Return the second-to-last segment if the URL has more than 3 levels
+  if (segments.length > 2) {
+    return segments[segments.length - 2]
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (char) => char.toUpperCase())
+  }
+
   if (segments.length === 0 || route.path === '/') return '' // Return empty string for root path
+
   return segments[segments.length - 1]
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (char) => char.toUpperCase())
 })
-
 // Theme state
 const isDarkTheme = ref(false)
 
@@ -102,7 +106,7 @@ onMounted(() => {
       </div>
       <div class="navbar-end lg:flex">
         <ul class="menu menu-horizontal hidden lg:flex">
-          <li><a href="/">Our Company</a></li>
+          <li><a href="/our-company">Our Company</a></li>
           <li><a href="/partners">Partners</a></li>
           <li class="dropdown dropdown-hover dropdown-center">
             <a href="/services"
@@ -161,7 +165,7 @@ onMounted(() => {
             tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-70 p-2 shadow"
           >
-            <li><a href="/">Our Company</a></li>
+            <li><a href="/our-company">Our Company</a></li>
             <li><a href="/partners">Partners</a></li>
             <li>
               <a href="/services"> Services</a>
@@ -212,7 +216,7 @@ onMounted(() => {
           <div class="drawer-side">
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
             <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
-              <li><a href="/">Our Company</a></li>
+              <li><a href="/our-company">Our Company</a></li>
               <li><a href="/partners">Partners</a></li>
               <li>
                 <a href="/services"> Services</a>
@@ -255,7 +259,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <main class="flex mx-auto flex-grow w-full">
+    <main class="flex mx-auto flex-grow w-full h-full items-center">
       <RouterView></RouterView>
     </main>
 

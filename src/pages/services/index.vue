@@ -1,21 +1,17 @@
 <template>
   <div class="flex flex-col gap-5 lg:p-10 p-4 items-center">
-    <h1 data-aos="fade-up" class="lg:text-lg text-center w-1/2">
+    <h1 data-aos="fade-up" class="lg:text-lg text-center lg:w-1/2">
       We're committed to excellence across a variety of domains. Our services are designed to meet
       the diverse needs of our clients, ensuring quality, efficiency, and innovation. Click on any
       of the images below to learn more about our specific offerings and how we can assist in
       achieving your objectives.
     </h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-3/4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4" data-aos="fade-up">
       <div
         v-for="(service, index) in serviceDetail"
         :key="service.name"
-        class="card bg-base-100 w-full shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out"
+        class="card bg-base-100 w-full shadow-sm shadow-primary outline-primary lg:p-4 p-2 hover:shadow-lg hover:outline-1 transition-all duration-100 ease-in-out overflow-hidden hover:cursor-pointer box-border outline-offset-0"
         :class="{ 'shadow-primary': true }"
-        data-aos="fade-up"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-sine"
-        :data-aos-delay="index * 200"
       >
         <figure>
           <img :src="service.image" :alt="service.name" class="w-full h-50 object-cover" />
