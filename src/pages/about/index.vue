@@ -1,31 +1,5 @@
 <template lang="">
   <div class="flex flex-col gap-5 lg:p-10 p-4 w-full items-center">
-    <h1 class="text-3xl text-center w-full" data-aos="fade-up">Our Philosophy</h1>
-    <ul class="list bg-base-100 rounded-box shadow-sm shadow-primary lg:w-3/4" data-aos="fade-up">
-      <li class="list-row">
-        <div></div>
-        <div>
-          <div class="text-lg font-semibold text-primary">Our Value</div>
-          <div class="text-sm opacity-60">
-            GRC is committed to driving innovation, fostering collaboration, and supporting
-            sustainable development. We are a platform that connects businesses, government bodies,
-            and communities, helping them grow and thrive through effective strategies and insights.
-          </div>
-        </div>
-      </li>
-      <li class="list-row">
-        <div></div>
-        <div>
-          <div class="text-lg font-semibold text-primary">Our Misssion</div>
-          <div class="text-sm opacity-60">
-            Our mission is to enhance market efficiency and sustainability by providing clear,
-            actionable support to businesses and policymakers. We focus on creating streamlined
-            value chains, encouraging sustainable practices, and boosting investment to strengthen
-            the economy.
-          </div>
-        </div>
-      </li>
-    </ul>
     <h1 class="text-3xl text-center w-full" data-aos="fade-up">Our Core Team</h1>
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4"

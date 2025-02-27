@@ -69,8 +69,9 @@
           </div>
         </li>
       </ul> -->
-      <h2 class="lg:text-3xl text-center w-full my-5 lg:my-10" data-aos="fade-up">
-        We offer a flexible pricing strategy designed to fit your specific budget and IT needs.
+      <h2 class="lg:text-3xl text-center lg:w-3/4 my-5 lg:my-10" data-aos="fade-up">
+        Our dynamic pricing strategy is designed to seamlessly adapt to your unique budget and
+        evolving logistics and supply chain needs, ensuring optimal efficiency and value.
       </h2>
     </div>
   </div>
