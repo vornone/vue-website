@@ -8,10 +8,10 @@ import 'aos/dist/aos.css'
 import AOS from 'aos'
 import grcLogo from '@/assets/logos/grc_logo_frame.png'
 import { setLanguage } from '@/functions/setLanguage'
-
+import { supabase } from './lib/supabaseClient'
 // Define supported locales type
 type SupportedLocale = 'en' | 'kh'
-
+console.log(supabase)
 // Create a ref to store the selected locale
 const selectedLocale = ref<SupportedLocale>('en')
 

@@ -24,7 +24,7 @@ export default defineComponent({
 <template>
   <div class="flex flex-col w-full h-full lg:gap-10 items-center" data-aos="fade-in">
     <div
-      class="flex flex-col w-full items-center lg:h-150 h-full justify-center gap-5 px-3 lg:px-0"
+      class="flex flex-col w-full items-center lg:h-150 h-full justify-center gap-5 px-3 lg:px-0 z-10"
     >
       <h2 class="text-center lg:w-1/2 w-3/4 text-sm">
         Presented by Green Route Cambodia Enterprise Co Ltd

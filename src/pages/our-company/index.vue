@@ -30,27 +30,27 @@
       Construction and Design Group
     </li>
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 lg:w-3/4"
       style="grid-auto-rows: 1fr"
       data-aos="fade-up"
     >
       <div
-        class="card bg-base-100 w-full shadow-sm shadow-primary outline-primary lg:p-4 p-2 hover:shadow-lg hover:outline-1 transition-all duration-100 ease-in-out overflow-hidden hover:cursor-pointer box-border outline-offset-0"
+        class="card lg:card-side bg-base-100 shadow-sm shadow-primary outline-primary lg:p-4 p-2 hover:shadow-lg hover:outline-1 transition-shadow duration-100 ease-in-out overflow-hidden hover:cursor-pointer box-border outline-offset-0 items-center"
         v-for="(member, index) in subsidiaries"
         :key="member.name"
         v-on:click="goToUrl(member.website)"
       >
-        <figure>
+        <figure class="lg:w-1/5 w-1/3">
           <img
             :src="member.image"
-            class="lg:h-50 lg:w-50 object-cover rounded-2xl border-primary border-1 bg-white object-center h-30"
+            class="object-cover rounded-2xl border-primary border-1 bg-white object-center"
           />
         </figure>
-        <div class="card-body text-center items-center">
-          <h2 class="card-title text-primary">
+        <div class="card-body text-center lg:text-left items-center lg:w-full">
+          <h2 class="card-title text-primary lg:text-left lg:w-full">
             {{ member.name }}
           </h2>
-          <p class="text-sm opacity-60">
+          <p class="text-sm opacity-60 lg:text-left lg:w-full">
             {{ member.type }}
           </p>
           <p>
