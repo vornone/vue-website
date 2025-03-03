@@ -220,7 +220,7 @@ export default defineComponent({
       <div class="divider"></div>
       <div class="flex w-full">
         <div
-          class="hero w-full rounded-lg overflow-hidden shadow-md shadow-primary"
+          class="hero w-full lg:h-150 rounded-lg overflow-hidden shadow-md shadow-primary"
           style="
             background-image: url(https://images.unsplash.com/photo-1644614827935-e54e9ba8f23a?auto=format&fit=crop&w=2400);
           "
