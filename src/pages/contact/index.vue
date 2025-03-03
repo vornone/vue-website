@@ -13,6 +13,29 @@
             Aenean non justo efficitur, tempus nibh et, aliquet diam. Nulla accumsan eros placerat
             ultricies ornare. Nullam vitae facilisis lectus, eu commodo augue.
           </p>
+          <ul class="">
+            <li>
+              <div class="flex items-top gap-2">
+                <Icon icon="line-md:map-marker-radius" class="text-primary min-h-5 min-w-5 mb-2" />
+                <p class="text-sm text-left">{{ $t('address') }}</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-top gap-2">
+                <Icon icon="line-md:phone" class="text-primary h-5 w-5 mb-2" />
+                <p class="text-sm">+855 23 45 67 89 / +855 23 45 67 89</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-top gap-2">
+                <Icon icon="line-md:email-plus" class="text-primary h-5 w-5 mb-2" />
+                <p class="text-sm link">
+                  <a href="mailto:info@grc-enterprise.com">info@grc-enterprise.com</a>
+                </p>
+              </div>
+            </li>
+          </ul>
+          <p class="py-6"></p>
         </div>
         <div
           class="card bg-base-100 w-full max-w-sm shrink-0 lg:shadow-2xl shadow-sm shadow-primary"
@@ -33,7 +56,7 @@
     </div>
   </div>
 </template>
-<script>
-export default {}
+<script setup lang="ts">
+import { Icon } from '@iconify/vue'
 </script>
 <style lang=""></style>
