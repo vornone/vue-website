@@ -6,7 +6,7 @@ import AOS from 'aos'
 import ServiceCard from '@/components/card/ServiceCard.vue'
 import type { Service } from '@/types/service'
 import { scrollToSection } from '@/functions/scrollToElement'
-import Partners from '@/components/partners/partners.vue'
+import Partners from '@/components/partners/Partners.vue'
 AOS.init()
 
 export default defineComponent({
