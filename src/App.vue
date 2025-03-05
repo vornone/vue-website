@@ -68,7 +68,7 @@ onMounted(() => {
 <template>
   <div class="min-h-screen flex flex-col">
     <header></header>
-    <div class="navbar bg-base-100 shadow-md px-4 z-99 sticky top-0">
+    <div class="navbar bg-base-100 shadow-md px-4 z-99 sticky top-0 light:shadow-sm">
       <div class="navbar-start gap-2">
         <label class="swap swap-rotate">
           <!-- this hidden checkbox controls the state -->
@@ -264,7 +264,7 @@ onMounted(() => {
     </main>
 
     <footer
-      class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10"
+      class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10"
     >
       <nav class="grid grid-flow-col gap-4" v-motion-fade-visible>
         <a class="link link-hover" href="/">Home</a>

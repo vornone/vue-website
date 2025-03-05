@@ -3,7 +3,7 @@
     <div class="hero">
       <div class="hero-content flex-col lg:flex-row lg:gap-20">
         <div class="text-center lg:text-left lg:w-1/2">
-          <h1 class="lg:text-3xl text-xl font-regular">
+          <h1 class="lg:text-3xl text-xl md:text-2xl font-regular">
             {{ $t('contact') }} <strong class="font-bold">GRC Enterprise </strong>
             {{ $t('today') }}:
           </h1>
@@ -13,7 +13,7 @@
             Aenean non justo efficitur, tempus nibh et, aliquet diam. Nulla accumsan eros placerat
             ultricies ornare. Nullam vitae facilisis lectus, eu commodo augue.
           </p>
-          <ul class="">
+          <ul>
             <li>
               <div class="flex items-top gap-2">
                 <Icon icon="line-md:map-marker-radius" class="text-primary min-h-5 min-w-5 mb-2" />
@@ -38,7 +38,7 @@
           <p class="py-6"></p>
         </div>
         <div
-          class="card bg-base-100 w-full max-w-sm shrink-0 lg:shadow-2xl shadow-sm shadow-primary"
+          class="card bg-base-100 w-full max-w-sm shrink-0 lg:shadow-2xl shadow-sm md:shadow-lg shadow-primary"
         >
           <div class="card-body">
             <fieldset class="fieldset">
