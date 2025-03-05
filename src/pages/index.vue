@@ -112,26 +112,82 @@ export default defineComponent({
           ],
         },
       ],
+      exportDetails: [
+        {
+          icon: 'hugeicons:organic-food',
+          name: 'Agriculture',
+          description: '',
+          importList: [
+            {
+              icon: 'hugeicons:vegetarian-food',
+              name: 'Agricultural Products',
+            },
+            {
+              icon: 'hugeicons:meat',
+              name: 'Processed Foods',
+            },
+            {
+              name: 'Beverages',
+            },
+          ],
+        },
+        {
+          icon: 'hugeicons:t-shirt',
+          name: 'Textiles',
+          description: '',
+          importList: [
+            {
+              name: '  Raw Materials',
+            },
+            {
+              name: 'Fabric and Textile Products',
+            },
+            {
+              name: 'Finished Goods',
+            },
+          ],
+        },
+        {
+          icon: 'hugeicons:pisa-tower',
+          name: 'Modern Khmer Antiquities',
+          description: '',
+          importList: [
+            {
+              name: ' Sculptures & Statuettes',
+            },
+            {
+              name: ' Construction Accents & Tiles',
+            },
+            {
+              name: 'Traditional Art',
+            },
+          ],
+        },
+      ],
     }
   },
 })
 </script>
 <template>
   <div
+    class="absolute top-0 z-[-1] h-screen w-full bg-no-repeat bg-center opacity-20 bg-contain bg-100"
+    style="background-image: url('/kh.svg')"
+  ></div>
+  <div
     class="absolute top-0 z-[-2] h-screen w-full bg-[radial-gradient(100%_50%_at_50%_0%,rgba(106,143,106,1)_0,rgba(106,143,106,0.2)_50%,rgba(0,163,255,0)_100%)]"
   ></div>
-  <div class="flex flex-col w-full h-full items-center pb-20 px-5">
-    <div class="flex flex-col w-dvw lg:h-50dvh h-170 lg:gap-10 items-center" data-aos="fade-in">
+  <div class="flex flex-col w-full h-full items-center pb-20 px-5" data-aos="fade-in">
+    <div class="flex flex-col w-full lg:h-50dvh h-170 lg:gap-10 items-center" data-aos="fade-in">
       <div
         class="flex flex-col w-full items-center lg:h-150 h-full justify-center gap-5 lg:px-0 z-10"
       >
-        <h2 class="text-center lg:w-1/2 w-3/4 text-lg">
+        <h2 class="text-center lg:w-1/2 w-3/4 lg:text-lg">
           Presented by Green Route Cambodia Enterprise Co Ltd
         </h2>
         <h1 class="lg:text-7xl text-3xl text-center w-full font-bold text-primary">
           Strategic Planning & <br />Development Services
         </h1>
-        <h2 class="text-center lg:w-1/2 text-lg">Sustainable Trade Solutions</h2>
+        <h2 class="text-center lg:w-1/2 lg:text-lg">Sustainable Trade Solutions</h2>
         <button
           class="btn btn-soft btn-primary border-primary border-1 light:hover:text-white hover:shadow-xl shadow-primary"
           v-on:click="goToUrl('services')"
@@ -170,6 +226,12 @@ export default defineComponent({
       </div>
       <div class="flex flex-col gap-5 w-full" data-aos="fade-up">
         <h1 class="text-2xl font-bold text-primary">Our Capabilities</h1>
+        <p class="lg:w-2/3">
+          Our capabilities include a global network for fast, efficient delivery and local expertise
+          for smooth trade compliance. We offer customized import/export solutions, prioritize
+          sustainable sourcing, and ensure transparent pricing with no hidden fees. Our competitive
+          rates provide high-quality, eco-friendly products tailored to your business needs.
+        </p>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-5" style="grid-auto-rows: 1fr">
           <div
             class="card card-compact shadow-sm shadow-primary bg-base-100 w-full"
@@ -187,55 +249,76 @@ export default defineComponent({
       </div>
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center" data-aos="fade-in">
-        <h1 class="text-2xl text-center">
+        <h1 class="lg:text-3xl text-xl text-center font-bold">
           At GRC we’re proud to oversee a diverse range of subsidiaries. Each one plays a crucial
           role in our mission to deliver exceptional value across different sectors.
         </h1>
       </div>
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full" data-aos="fade-up">
-        <h1 class="text-2xl font-bold text-primary">What we import to Cambodia</h1>
-        <p>
-          Our goal is to continuously expand our operations, offering an ever-growing array of
-          options to meet your needs.
+        <h1 class="text-2xl font-bold text-primary">Universal Export</h1>
+        <p class="lg:w-2/3">
+          Our mission is to continually grow our operations, providing an expanding range of
+          solutions tailored to your needs. We strive to enhance our offerings, ensuring you have
+          access to diverse and innovative options that support your business’s success.
         </p>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5" style="grid-auto-rows: 1fr">
-          <div
-            class="card card-compact shadow-sm shadow-primary bg-base-100 w-full"
-            v-for="importItem in importDetails"
+        <div class="flex flex-col lg:flex-row gap-5 w-full items-center" data-aos="fade-in">
+          <ul
+            class="list bg-base-100 rounded-box shadow-sm shadow-primary w-full"
+            data-aos="fade-up"
           >
-            <div class="card-body">
-              <Icon :icon="importItem.icon" class="h-10 w-10 text-primary" />
-              <h2 class="card-title">{{ importItem.name }}</h2>
-              <p class="opacity-60">
-                {{ importItem.description }}
-              </p>
-              <ul v-for="item in importItem.importList" class="list-inside">
-                <li class="opacity-60">{{ item.name }}</li>
-              </ul>
-            </div>
-          </div>
+            <li class="p-4 pb-2 text-md tracking-wide">What we Import to Cambodia</li>
+            <li class="list-row" v-for="item in importDetails">
+              <div></div>
+              <div>
+                <div class="flex mb-2 text-lg font-semibold text-primary">
+                  <div class="flex items-center gap-2">
+                    <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
+                  </div>
+                </div>
+                <div class="flex flex-col" v-for="list in item.importList">
+                  <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul
+            class="list bg-base-100 rounded-box shadow-sm shadow-primary w-full"
+            data-aos="fade-up"
+          >
+            <li class="p-4 pb-2 text-sm tracking-wide">What we export from Cambodia</li>
+            <li class="list-row" v-for="item in exportDetails">
+              <div></div>
+              <div>
+                <div class="flex mb-2 text-lg font-semibold text-primary">
+                  <div class="flex items-center gap-2">
+                    <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
+                  </div>
+                </div>
+                <div class="flex flex-col" v-for="list in item.importList">
+                  <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="divider"></div>
       <div class="flex w-full">
-        <div
-          class="hero w-full lg:h-150 rounded-lg overflow-hidden shadow-md shadow-primary"
-          style="
-            background-image: url(https://images.unsplash.com/photo-1644614827935-e54e9ba8f23a?auto=format&fit=crop&w=2400);
-          "
-        >
-          <div class="hero-overlay"></div>
-          <div class="hero-content text-neutral-content text-center items-center w-full">
-            <div class="w-full flex flex-col items-center gap-5">
-              <h1 class="text-2xl font-bold text-white">
+        <div class="flex w-full p-0" data-aos="fade-up">
+          <div class="flex lg:flex-row-reverse flex-col-reverse lg:gap-20 gap-10 p-0">
+            <img
+              src="https://images.unsplash.com/photo-1644614827935-e54e9ba8f23a?auto=format&fit=crop&w=800"
+              class="rounded-lg shadow-md lg:w-1/2 w-full h-50 lg:h-100 object-cover shadow-primary"
+            />
+            <div class="w-full">
+              <h1 class="text-2xl font-bold text-primary">
                 The Importance of Modern Khmer Antiquities
               </h1>
-              <p class="mb-5 text-white w-3/4 text-sm">
+              <p class="py-6">
                 The significance of modern Khmer antiquities lies in their role in preserving
                 Cambodia’s cultural heritage, while addressing ethical concerns around sourcing
                 actual antiquities. These modern recreations adhere to a nuanced understanding of
-                the dos and don’t in cultural representation, ensuring respect and accuracy.
+                the dos and don’ts in cultural representation, ensuring respect and accuracy.
                 Technological advances and knowledge of historical craftsmanship enable precise
                 reproductions without risking original artifacts or sites. This approach safeguards
                 Cambodia’s historical legacy, allowing it to educate and inspire without
@@ -245,12 +328,43 @@ export default defineComponent({
           </div>
         </div>
       </div>
+
+      <div class="divider"></div>
+      <div class="flex w-full">
+        <div class="flex w-full p-0" data-aos="fade-up">
+          <div class="flex lg:flex-row flex-col-reverse lg:gap-20 gap-10 p-0">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800"
+              class="rounded-lg shadow-md lg:w-1/2 w-full h-50 lg:h-100 object-cover shadow-primary"
+            />
+            <div class="w-full">
+              <h1 class="text-2xl font-bold text-primary">Our Core Team</h1>
+              <p class="py-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia erat
+                mattis ex rhoncus, at fermentum eros dictum. Sed id porta dolor. Fusce pulvinar
+                varius justo, quis pulvinar lorem cursus a. Interdum et malesuada fames ac ante
+                ipsum primis in faucibus. Curabitur ornare faucibus condimentum.
+              </p>
+              <div>
+                <button
+                  class="btn btn-primary btn-soft border-1 border-primary hover:shadow-xl shadow-primary light:hover:text-white"
+                  v-on:click="goToUrl('about')"
+                >
+                  Go to our team <Icon icon="material-symbols:arrow-right-alt-rounded" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center">
         <h1 class="lg:text-4xl font-bold text-center">Green Route Cambodia Enterprise Co Ltd</h1>
         <div>
           <button
             class="btn btn-primary btn-soft border-1 border-primary hover:shadow-xl shadow-primary light:hover:text-white"
+            v-on:click="goToUrl('contact')"
           >
             Connect with us <Icon icon="material-symbols:arrow-right-alt-rounded" />
           </button>

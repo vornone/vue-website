@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-5 lg:p-10 p-4 w-full">
+  <div class="flex flex-col gap-5 lg:p-10 p-4 w-full" data-aos="fade-in">
     <div class="hero">
       <div class="hero-content flex-col lg:flex-row lg:gap-20">
         <div class="text-center lg:text-left lg:w-1/2">
