@@ -202,14 +202,14 @@ export default defineComponent({
     </div>
     <div class="flex flex-col lg:w-3/4 items-center lg:gap-25 gap-25 w-full">
       <div class="flex flex-col w-full items-center gap-10">
-        <!-- <h1 class="text-xl font-bold">Trusted by top companies</h1>
+        <h1 class="text-xl font-bold">Trusted by top companies</h1>
         <transition
           enter-active-class="transition-opacity duration-1500 ease-in-out"
           enter-from-class="opacity-0"
           enter-to-class="opacity-100"
         >
           <Partners class="opacity-50" />
-        </transition> -->
+        </transition>
       </div>
       <div class="flex flex-col w-full">
         <div
