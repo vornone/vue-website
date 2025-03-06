@@ -40,7 +40,7 @@
         :key="member.name"
         v-on:click="goToUrl(member.website)"
       >
-        <figure class="lg:w-1/5 w-1/3">
+        <figure class="lg:w-75 w-1/3">
           <img
             :src="member.image"
             class="object-cover rounded-2xl border-primary border-1 bg-white object-center"
@@ -104,7 +104,7 @@ export default {
           type: 'Cafe and Resort',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
           website: '',
-          description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
+          description: `The Umbrella Café and Resort, stands as a tranquil retreat from city life, featuring a café, seating kiosks, and a distinctive tree bar set beside a picturesque pond and canal. This initiative is part of a larger scheme that seamlessly integrates architecture and interior design to foster a calming, natural ambiance. The master plan meticulously outlines the space's functional zones and landscaping, emphasizing spatial organization to optimize the visitor experience. Each aspect is designed with a commitment to high standards, practicality, and aesthetic appeal.`,
         },
       ],
     }

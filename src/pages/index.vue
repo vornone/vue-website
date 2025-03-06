@@ -202,14 +202,14 @@ export default defineComponent({
     </div>
     <div class="flex flex-col lg:w-3/4 items-center lg:gap-25 gap-25 w-full">
       <div class="flex flex-col w-full items-center gap-10">
-        <h1 class="text-xl font-bold">Trusted by top companies</h1>
+        <!-- <h1 class="text-xl font-bold">Trusted by top companies</h1>
         <transition
           enter-active-class="transition-opacity duration-1500 ease-in-out"
           enter-from-class="opacity-0"
           enter-to-class="opacity-100"
         >
           <Partners class="opacity-50" />
-        </transition>
+        </transition> -->
       </div>
       <div class="flex flex-col w-full">
         <div
@@ -368,7 +368,7 @@ export default defineComponent({
         </div>
       </div>
 
-      <div class="divider"></div>
+      <!-- <div class="divider"></div>
       <div class="flex w-full">
         <div class="flex w-full p-0" data-aos="fade-up">
           <div class="flex lg:flex-row flex-col-reverse lg:gap-20 gap-10 p-0">
@@ -395,7 +395,7 @@ export default defineComponent({
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center">

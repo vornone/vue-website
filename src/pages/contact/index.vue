@@ -8,10 +8,10 @@
             {{ $t('today') }}:
           </h1>
           <p class="py-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies sollicitudin mi
-            ut tincidunt. Cras metus diam, congue sit amet cursus porttitor, molestie nec elit.
-            Aenean non justo efficitur, tempus nibh et, aliquet diam. Nulla accumsan eros placerat
-            ultricies ornare. Nullam vitae facilisis lectus, eu commodo augue.
+            Contact Green Route Cambodia Enterprise for innovative, sustainable solutions across
+            various sectors. Our expertise in conservation, ethical sourcing, and cutting-edge
+            technologies ensures impactful, environmentally responsible outcomes for your business
+            needs.
           </p>
           <ul>
             <li>

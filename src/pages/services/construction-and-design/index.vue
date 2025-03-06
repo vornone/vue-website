@@ -10,7 +10,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content text-neutral-content text-center">
           <div class="max-w-full">
-            <p class="mb-5 text-white">
+            <!-- <p class="mb-5 text-white">
               orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt volutpat nisl
               a blandit. Cras id diam maximus, consectetur arcu eget, venenatis nisl. Nunc
               malesuada, enim et mattis vestibulum, justo diam iaculis sem, sed scelerisque ipsum ex
@@ -18,30 +18,30 @@
             </p>
             <button class="btn btn-primary text-base-100" @click="scrollToSection('designers')">
               Our Designers
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
     </div>
     <div class="flex flex-col gap-10 lg:w-3/4 items-center">
       <h1 class="text-3xl text-center w-full">What we offer</h1>
-      <h2 class="text-center lg:w-1/2">
+      <!-- <h2 class="text-center lg:w-1/2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
         porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
         et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
         placerat. Mauris lobortis eleifend maximus.
-      </h2>
+      </h2> -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" style="grid-auto-rows: 1fr">
         <ServiceCard :serviceDetail="services" />
       </div>
       <div class="divider"></div>
       <h1 class="text-3xl text-center w-full" id="designers" data-aos="fade-up">Our Designers</h1>
-      <h2 data-aos="fade-up" class="text- text-center lg:w-1/2">
+      <!-- <h2 data-aos="fade-up" class="text- text-center lg:w-1/2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
         porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
         et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
         placerat. Mauris lobortis eleifend maximus.
-      </h2>
+      </h2> -->
       <ul class="list bg-base-100 rounded-box shadow-md shadow-primary" data-aos="fade-up">
         <li
           v-for="subsidiary in subsidiaries"
@@ -108,22 +108,22 @@ export default defineComponent({
           name: 'Keha Home',
           type: 'Interior Decor Design Studio',
           image: new URL('@/assets/logos/keha_logo.png', import.meta.url).href,
-          website: 'https://aoarchitectsdesign.com/',
+          website: '',
           description: `Specializing in contemporary aesthetics, Keha Home offers uniquely designed furniture and art pieces that blend form and function. Our high-quality, innovative designs cater to art lovers and decorators, enhancing any space with elegance and modern charm.`,
         },
         {
           name: 'Umbrella Development',
           type: 'Construction Firm',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
+          website: '',
           description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
         },
         {
           name: 'The Umbrella Cafe and Resort',
           type: 'Cafe and Resort',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
-          description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
+          website: '',
+          description: `The Umbrella Café and Resort, stands as a tranquil retreat from city life, featuring a café, seating kiosks, and a distinctive tree bar set beside a picturesque pond and canal. This initiative is part of a larger scheme that seamlessly integrates architecture and interior design to foster a calming, natural ambiance. The master plan meticulously outlines the space's functional zones and landscaping, emphasizing spatial organization to optimize the visitor experience. Each aspect is designed with a commitment to high standards, practicality, and aesthetic appeal.`,
         },
       ],
       services: [
@@ -175,7 +175,7 @@ export default defineComponent({
         {
           name: 'Interior Decor Fitting Out',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet luctus magna, porta dictum enim dapibus et. Aliquam volutpat iaculis porttitor. Aenean quis rhoncus nunc. Nullam vitae urna arcu. Mauris sapien nisi, hendrerit eget dignissim sed, pretium nec ligula.',
+            'we specialize in transforming spaces with tailored design solutions. We offer high-quality materials, craftsmanship, and seamless installations, creating functional, aesthetic environments for residential, commercial, and office spaces.',
           image:
             'https://images.unsplash.com/photo-1509805225007-73e8ba4b5be8?auto=format&fit=crop&w=800',
           url: 'https://example.com/service2',

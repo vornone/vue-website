@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col gap-4 lg:p-10 p-4 items-center">
-    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide lg:w-3/4">Our Valued Partners</li>
+    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide lg:w-3/4 md:w-full">
+      Our Valued Partners
+    </li>
     <ul
       class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary lg:w-3/4"
       data-aos="fade-up"
@@ -29,7 +31,9 @@
         </div>
       </li>
     </ul>
-    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide lg:w-3/4">Our Valued Subsidiaries</li>
+    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide lg:w-3/4 md:w-full">
+      Our Valued Subsidiaries
+    </li>
     <ul
       class="list bg-base-100 rounded-box shadow-md lg:p-10 p-4 shadow-primary lg:w-3/4"
       data-aos="fade-up"
@@ -84,22 +88,22 @@ export default {
           name: 'Keha Home',
           type: 'Interior Decor Design Studio',
           image: new URL('@/assets/logos/keha_logo.png', import.meta.url).href,
-          website: 'https://aoarchitectsdesign.com/',
+          website: '',
           description: `Specializing in contemporary aesthetics, Keha Home offers uniquely designed furniture and art pieces that blend form and function. Our high-quality, innovative designs cater to art lovers and decorators, enhancing any space with elegance and modern charm.`,
         },
         {
           name: 'Umbrella Development',
           type: 'Construction Firm',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
+          website: '',
           description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
         },
         {
           name: 'The Umbrella Cafe and Resort',
           type: 'Cafe and Resort',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
-          description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
+          website: '',
+          description: `The Umbrella Café and Resort, stands as a tranquil retreat from city life, featuring a café, seating kiosks, and a distinctive tree bar set beside a picturesque pond and canal. This initiative is part of a larger scheme that seamlessly integrates architecture and interior design to foster a calming, natural ambiance. The master plan meticulously outlines the space's functional zones and landscaping, emphasizing spatial organization to optimize the visitor experience. Each aspect is designed with a commitment to high standards, practicality, and aesthetic appeal.`,
         },
       ],
       partnerDetail: [
@@ -107,15 +111,15 @@ export default {
           name: 'CAMBODIAN INSTITUTE FOR RESEARCH AND RURAL DEVELOPMENT (CIRD)',
           type: 'Research Institute',
           image: new URL('@/assets/logos/cird.jpg', import.meta.url).href,
-          website: 'https://aoarchitectsdesign.com/',
+          website: 'https://www.cird.org.kh/home/',
           description: `Working with CIRD amplifies our efforts in rural development and research. Their expertise in rural challenges and solutions supports our mission to deploy technology and data analytics for rural upliftment, enhancing our impact on these communities.`,
         },
         {
           name: 'Canadian Chamber of Commerce in Cambodia (CanCham)',
           type: 'Nonprofit organization',
           image: new URL('@/assets/logos/cancham.png', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
-          description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus tortor ac augue porta ultrices. Proin vestibulum velit nec est venenatis volutpat. Mauris risus ex, dignissim ac tincidunt vitae, eleifend vitae metus. Vivamus sed est orci. Mauris felis tellus, venenatis et suscipit ac, elementum eget metus. .`,
+          website: 'https://canchamcambodia.org/',
+          description: `Their Mission is to empower the business community in the Kingdom of Cambodia by providing a robust platform for networking, advocacy, and professional growth. CanCham is dedicated to fostering an inclusive environment where diverse talents converge to create innovative solutions and drive economic success. They aim to support every member in reaching their full potential through collaborative opportunities and strategic partnerships.`,
         },
       ],
     }

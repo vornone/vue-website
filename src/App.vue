@@ -130,7 +130,7 @@ onMounted(() => {
               </li>
             </ul>
           </li>
-          <li><a href="/about">About</a></li>
+          <!-- <li><a href="/about">About</a></li> -->
           <li><a href="/contact">Contact</a></li>
         </ul>
         <select
@@ -187,7 +187,7 @@ onMounted(() => {
                 </li>
               </ul>
             </li>
-            <li><a href="/about">About us</a></li>
+            <!-- <li><a href="/about">About</a></li> -->
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -239,7 +239,7 @@ onMounted(() => {
                   </li>
                 </ul>
               </li>
-              <li><a href="/about">About us</a></li>
+              <!-- <li><a href="/about">About</a></li> -->
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
@@ -271,7 +271,7 @@ onMounted(() => {
         <a class="link link-hover" href="/partners">Partners</a>
         <a class="link link-hover" href="/services">Services</a>
         <a class="link link-hover" href="/contact">Contact</a>
-        <a class="link link-hover" href="/about">About</a>
+        <!-- <a class="link link-hover" href="/about">About</a> -->
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4" v-motion-fade-visible>
