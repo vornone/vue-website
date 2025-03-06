@@ -291,7 +291,7 @@ export default defineComponent({
       </div>
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full" data-aos="fade-up">
-        <h1 class="text-2xl font-bold text-primary">Universal Export</h1>
+        <h1 class="text-2xl font-bold text-primary">Universal Export and Import</h1>
         <p class="lg:w-2/3">
           Our mission is to continually grow our operations, providing an expanding range of
           solutions tailored to your needs. We strive to enhance our offerings, ensuring you have
@@ -380,10 +380,9 @@ export default defineComponent({
             <div class="w-full">
               <h1 class="text-2xl font-bold text-primary">Our Core Team</h1>
               <p class="py-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia erat
-                mattis ex rhoncus, at fermentum eros dictum. Sed id porta dolor. Fusce pulvinar
-                varius justo, quis pulvinar lorem cursus a. Interdum et malesuada fames ac ante
-                ipsum primis in faucibus. Curabitur ornare faucibus condimentum.
+                Our team at Green Route Cambodia Enterprise is passionate, innovative, and committed
+                to sustainability, combining diverse expertise to drive impactful solutions across
+                various sectors.
               </p>
               <div>
                 <button
