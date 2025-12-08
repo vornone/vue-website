@@ -14,7 +14,7 @@
         <figure>
           <img
             :src="member.image"
-            class="h-50 w-50 object-cover rounded-full border-primary border-1"
+            class="h-50 w-50 object-cover rounded-full border-primary border-1 object-top"
           />
         </figure>
         <div class="card-body text-center items-center">
@@ -49,42 +49,42 @@ export default {
           name: 'Jane Doe',
           title: 'CEO & Founder',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/jane_doe.png', import.meta.url).href,
+          image: new URL('@/assets/team/jane_doe.jpg', import.meta.url).href,
           description: `As an investor and entrepreneur, Jane leads with a  strong foundation in business and commitment to sustainability, backed by a master's expertise in the field, while spearheading our company's mission as CEO & founder.`,
         },
         {
           name: 'John Doe',
           title: 'Business Development Manager',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/john_doe.png', import.meta.url).href,
+          image: new URL('@/assets/team/john_doe.jpg', import.meta.url).href,
           description: `John Doe has a strong  diverse technical background. His experience working with NGO to provide technical and facilitation support to value chain key actors, coupled with a background in investment and trading, strategically propels our growth toward impactful outcomes.`,
         },
         {
           name: 'Michael Johnson',
           title: 'Trade Expert',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/michael_johnson.png', import.meta.url).href,
+          image: new URL('@/assets/team/michael_johnson.jpg', import.meta.url).href,
           description: `Our trade export and import expert seamlessly blends a strong communication background with branding expertise. Navigating the complexities of international trade, he ensures smooth transactions and fosters effective communication channels.`,
         },
         {
           name: 'David Anderson',
           title: 'Project Manager',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/david_anderson.png', import.meta.url).href,
-          description: `David Anderson is an accomplished architect with over a decade of experience in architectural design and business operations.`,
+          image: new URL('@/assets/team/david_anderson.jpg', import.meta.url).href,
+          description: `David Anderson is an a CC omplished architect with over a decade of experience in architectural design and business operations.`,
         },
         {
           name: 'Robert Williams',
           title: 'Operations Manager',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/robert_williams.png', import.meta.url).href,
+          image: new URL('@/assets/team/robert_williams.jpg', import.meta.url).href,
           description: `Robert Williams is an experienced operations manager with a proven track record in coordinating and managing complex projects.`,
         },
         {
           name: 'Emily Carter',
           title: 'Business Analyst',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/emily_carter.png', import.meta.url).href,
+          image: new URL('@/assets/team/emily_carter.jpg', import.meta.url).href,
           description: `Emily Carter is a seasoned business analyst with a keen eye for detail and a passion for helping organizations make data-driven decisions.`,
         },
       ],

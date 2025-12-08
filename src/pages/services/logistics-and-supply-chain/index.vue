@@ -97,32 +97,33 @@ export default defineComponent({
     return {
       subsidiaries: [
         {
-          name: 'AO Architects',
+          name: '7Lines Development',
           type: 'Architectural Design Firm',
           image: new URL('@/assets/logos/ao_logo.png', import.meta.url).href,
           website: 'https://aoarchitectsdesign.com/',
           description: `We specialize in architecture and interior design that merges aesthetic appeal with
                   sustainable functionality. Our team works globally, delivering projects that meet high
                   standards of practicality and cost-efficiency. From master planning to advanced 3D
-                  visualization, we ensure each design reflects our distinctive Cambodian style and aligns
+                  visualization, we ensure each design reflects our distinctive Mid-Century style and aligns
                   with client visions.`,
         },
         {
-          name: 'Keha Home',
+          name: 'Vase Home',
           type: 'Interior Decor Design Studio',
           image: new URL('@/assets/logos/keha_logo.png', import.meta.url).href,
           website: 'https://aoarchitectsdesign.com/',
-          description: `Specializing in contemporary aesthetics, Keha Home offers uniquely designed furniture and art pieces that blend form and function. Our high-quality, innovative designs cater to art lovers and decorators, enhancing any space with elegance and modern charm.`,
+          description: `Specializing in contemporary aesthetics, Vase Home offers uniquely designed furniture and art pieces that blend form and function. Our high-quality, innovative designs cater to art lovers and decorators, enhancing any space with elegance and modern charm.`,
         },
         {
-          name: 'Umbrella Development',
+          name: 'Sea-Shell Development
+',
           type: 'Construction Firm',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
           website: 'https://umbrelladevelopment.com/',
           description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
         },
         {
-          name: 'The Umbrella Cafe and Resort',
+          name: 'Sea-Shell  Resort',
           type: 'Cafe and Resort',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
           website: 'https://umbrelladevelopment.com/',
@@ -132,7 +133,7 @@ export default defineComponent({
       services: [
         {
           name: 'Customized Solutions',
-          description: `We provide customized solutions to match your business's unique needs. Our team collaborates with you closely, whether you're importing or exporting, to achieve your goals accurately.`,
+          description: `We provide customized solutions to match your business's unique needs. Our team collaborates with you closely, whether you're importing or exporting, to achieve your goals a CC urately.`,
           image:
             'https://images.unsplash.com/photo-1601897690942-bcacbad33e55?auto=format&fit=crop&w=800',
           url: 'https://example.com/service1',

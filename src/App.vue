@@ -6,7 +6,7 @@ import { useRoute } from 'vue-router'
 import { computed, ref, onMounted, watch } from 'vue'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
-import grcLogo from '@/assets/logos/GRS.png'
+import grsLogo from '@/assets/logos/grs-logo.png'
 import { setLanguage } from '@/functions/setLanguage'
 // import { supabase } from './lib/supabaseClient'
 // Define supported locales type
@@ -115,9 +115,9 @@ onMounted(() => {
         </label>
         <a href="/"
           ><img
-            :src="grcLogo"
+            :src="grsLogo"
             alt="GRS-logo"
-            class="h-20 lg:ml-10 ml-2 hover:cursor-pointer hover:shadow-lg shadow-primary transition-shadow duration-300 ease-in-out border-1 border-primary/50 rounded-lg"
+            class="lg:h-15 h-10 lg:ml-10 ml-2 hover:cursor-pointer hover:shadow-lg shadow-primary transition-shadow duration-300 ease-in-out rounded-lg shadow-xs"
         /></a>
         <!-- <a class="btn btn-ghost text-xl" href="/">GRS-enterprise</a> -->
       </div>
@@ -313,8 +313,10 @@ onMounted(() => {
     <footer
       class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10"
     >
-      <nav class="grid grid-flow-col gap-4" v-motion-fade-visible>
+      <nav class="grid grid-cols-2 lg:grid-cols-6 gap-4" v-motion-fade-visible>
         <a class="link link-hover" href="/">Home</a>
+        <a class="link link-hover" href="/our-company">Our Company</a>
+        <a class="link link-hover" href="/about">About</a>
         <a class="link link-hover" href="/partners">Partners</a>
         <a class="link link-hover" href="/services">Services</a>
         <a class="link link-hover" href="/contact">Contact</a>

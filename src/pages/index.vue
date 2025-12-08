@@ -38,7 +38,7 @@ export default defineComponent({
           name: 'Customized Solutions',
           image: 'information-technology',
           description:
-            'We provide customized solutions to match your business’s unique needs. Our team collaborates with you closely, whether you’re importing or exporting, to achieve your goals accurately.',
+            'We provide customized solutions to match your business’s unique needs. Our team collaborates with you closely, whether you’re importing or exporting, to achieve your goals a CC urately.',
           tags: [],
           url: '/services/information-technology',
         },
@@ -157,7 +157,7 @@ export default defineComponent({
               name: ' Sculptures & Statuettes',
             },
             {
-              name: ' Construction Accents & Tiles',
+              name: ' Construction A CC ents & Tiles',
             },
             {
               name: 'Traditional Art',
@@ -224,7 +224,7 @@ export default defineComponent({
               <h1 class="text-3xl font-bold text-white">DEFINING THE GLOBAL ECONOMY</h1>
               <p class="py-6 lg:w-2/3 text-white">
                 An interconnected system where sustainability, innovation, and ethical business
-                practices drive long-term success. By promoting responsible trade, advanced
+                practices drive long-term su CC ess. By promoting responsible trade, advanced
                 technology, and data-driven solutions, we contribute to a more resilient and
                 inclusive global marketplace that balances economic growth with environmental and
                 social responsibility.
@@ -295,8 +295,8 @@ export default defineComponent({
         <h1 class="text-2xl font-bold text-primary">Universal Export and Import</h1>
         <p class="lg:w-2/3">
           Our mission is to continually grow our operations, providing an expanding range of
-          solutions tailored to your needs. We strive to enhance our offerings, ensuring you have
-          access to diverse and innovative options that support your business’s success.
+          solutions tailored to your needs. We strive to enhance our offerings, ensuring you have a
+          CC ess to diverse and innovative options that support your business’s su CC ess.
         </p>
         <div
           class="flex flex-col md:flex-row lg:flex-row gap-5 w-full items-center"
@@ -358,7 +358,7 @@ export default defineComponent({
                 The significance of modern Khmer antiquities lies in their role in preserving
                 Cambodia’s cultural heritage, while addressing ethical concerns around sourcing
                 actual antiquities. These modern recreations adhere to a nuanced understanding of
-                the dos and don’ts in cultural representation, ensuring respect and accuracy.
+                the dos and don’ts in cultural representation, ensuring respect and a CC uracy.
                 Technological advances and knowledge of historical craftsmanship enable precise
                 reproductions without risking original artifacts or sites. This approach safeguards
                 Cambodia’s historical legacy, allowing it to educate and inspire without
