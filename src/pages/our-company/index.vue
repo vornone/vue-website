@@ -1,13 +1,16 @@
-<template lang="">
+<template lang="html">
   <div class="flex flex-col gap-5 lg:p-10 p-4 w-full items-center">
-    <li class="lg:text-xl text-left lg:w-3/4 w-full" data-aos="fade-up">Our Philosophy</li>
-    <ul class="list bg-base-100 rounded-box shadow-sm shadow-primary lg:w-3/4" data-aos="fade-up">
+    <li class="lg:text-xl text-left lg:w-3/4 md:w-7/8 w-full" data-aos="fade-up">Our Philosophy</li>
+    <ul
+      class="list bg-base-100 rounded-box shadow-sm shadow-primary lg:w-3/4 md:w-7/8"
+      data-aos="fade-up"
+    >
       <li class="list-row">
         <div></div>
         <div>
           <div class="text-lg font-semibold text-primary">Our Value</div>
           <div class="text-sm opacity-60">
-            GRC is committed to driving innovation, fostering collaboration, and supporting
+            GRS is committed to driving innovation, fostering collaboration, and supporting
             sustainable development. We are a platform that connects businesses, government bodies,
             and communities, helping them grow and thrive through effective strategies and insights.
           </div>
@@ -26,34 +29,36 @@
         </div>
       </li>
     </ul>
-    <li class="lg:text-xl text-left lg:w-3/4 w-full" data-aos="fade-up">
+    <li class="lg:text-xl text-left lg:w-3/4 w-full md:w-7/8" data-aos="fade-up">
       Construction and Design Group
     </li>
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 lg:w-3/4"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4 md:w-7/8"
       style="grid-auto-rows: 1fr"
       data-aos="fade-up"
     >
       <div
-        class="card lg:card-side bg-base-100 shadow-sm shadow-primary outline-primary lg:p-4 p-2 hover:shadow-lg hover:outline-1 transition-shadow duration-100 ease-in-out overflow-hidden hover:cursor-pointer box-border outline-offset-0 items-center"
+        class="card bg-base-100 w-full shadow-md shadow-primary hover:cursor-pointer hover:shadow-lg transition-shadow duration-100 ease-in-out justify-center align-center pt-5"
         v-for="(member, index) in subsidiaries"
         :key="member.name"
         v-on:click="goToUrl(member.website)"
       >
-        <figure class="lg:w-75 w-1/3">
+        <figure>
           <img
             :src="member.image"
-            class="object-cover rounded-2xl border-primary border-1 bg-white object-center"
+            class="lg:w-40 lg:h-40 h-40 object-cover object-center rounded-2xl border-primary border-1 bg-white"
           />
         </figure>
-        <div class="card-body text-center lg:text-left items-center lg:w-full">
-          <h2 class="card-title text-primary lg:text-left lg:w-full">
+        <div
+          class="card-body lg:p-8 p-5 w-full text-center flex justify-center items-center lg:items-left lg:text-left"
+        >
+          <h2 class="card-title text-primary lg:w-full">
             {{ member.name }}
           </h2>
-          <p class="text-sm opacity-60 lg:text-left lg:w-full">
+          <p class="text-sm opacity-60 lg:w-full">
             {{ member.type }}
           </p>
-          <p>
+          <p class="w-full h-full">
             {{ member.description }}
           </p>
         </div>

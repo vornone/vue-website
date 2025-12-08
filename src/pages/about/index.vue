@@ -32,13 +32,13 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 AOS.init()
 export default {
   methods: {
-    goToService(name) {
+    goToService(name: string) {
       this.$router.push('services/' + name)
     },
   },
@@ -46,46 +46,46 @@ export default {
     return {
       teamDetails: [
         {
-          name: 'Nivicheta Chamreoun',
+          name: 'Jane Doe',
           title: 'CEO & Founder',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/nivicheta_chamreoun.png', import.meta.url).href,
-          description: `As an investor and entrepreneur, Nivicheta leads with a  strong foundation in business and commitment to sustainability, backed by a master's expertise in the field, while spearheading our company's mission as CEO & founder.`,
+          image: new URL('@/assets/team/jane_doe.png', import.meta.url).href,
+          description: `As an investor and entrepreneur, Jane leads with a  strong foundation in business and commitment to sustainability, backed by a master's expertise in the field, while spearheading our company's mission as CEO & founder.`,
         },
         {
-          name: 'David Stevenson',
+          name: 'John Doe',
           title: 'Business Development Manager',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/david_stevenson.png', import.meta.url).href,
-          description: `David has a strong  diverse technical background. His experience working with NGO to provide technical and facilitation support to value chain key actors, coupled with a background in investment and trading, strategically propels our growth toward impactful outcomes.`,
+          image: new URL('@/assets/team/john_doe.png', import.meta.url).href,
+          description: `John Doe has a strong  diverse technical background. His experience working with NGO to provide technical and facilitation support to value chain key actors, coupled with a background in investment and trading, strategically propels our growth toward impactful outcomes.`,
         },
         {
-          name: 'Michael Smith',
+          name: 'Michael Johnson',
           title: 'Trade Expert',
           url: 'construction-and-design',
-          image: new URL('@/assets/team/michael_smith.png', import.meta.url).href,
+          image: new URL('@/assets/team/michael_johnson.png', import.meta.url).href,
           description: `Our trade export and import expert seamlessly blends a strong communication background with branding expertise. Navigating the complexities of international trade, he ensures smooth transactions and fosters effective communication channels.`,
         },
         {
-          name: 'Pheaktravisal Vanna',
-          title: 'The Umbrella, Project Owner',
+          name: 'David Anderson',
+          title: 'Project Manager',
           url: 'construction-and-design',
-          image: new URL('', import.meta.url).href,
-          description: `Pheaktravisal is an accomplished architect with over a decade of experience in architectural design and business operations.He excels in creating high-fidelity architectural project representations. As a member of the Business Network International Committee, he helps drive collaboration and strategic growth. He is now leading the investment on the new residential project, The Umbrella.`,
+          image: new URL('@/assets/team/david_anderson.png', import.meta.url).href,
+          description: `David Anderson is an accomplished architect with over a decade of experience in architectural design and business operations.`,
         },
         {
-          name: 'Muniroth Nou',
-          title: 'AO Architects, Principle Architect',
+          name: 'Robert Williams',
+          title: 'Operations Manager',
           url: 'construction-and-design',
-          image: new URL('', import.meta.url).href,
-          description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum, nunc in dignissim pulvinar, diam purus congue sem, et elementum tellus orci nec eros. Proin in eros efficitur, lacinia nisi sed, aliquam lorem. Nunc eu nisi congue, congue massa et, aliquet velit.`,
+          image: new URL('@/assets/team/robert_williams.png', import.meta.url).href,
+          description: `Robert Williams is an experienced operations manager with a proven track record in coordinating and managing complex projects.`,
         },
         {
-          name: 'Rachny Im',
-          title: 'KehaHome, Co-Founder',
+          name: 'Emily Carter',
+          title: 'Business Analyst',
           url: 'construction-and-design',
-          image: new URL('', import.meta.url).href,
-          description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum, nunc in dignissim pulvinar, diam purus congue sem, et elementum tellus orci nec eros. Proin in eros efficitur, lacinia nisi sed, aliquam lorem. Nunc eu nisi congue, congue massa et, aliquet velit.`,
+          image: new URL('@/assets/team/emily_carter.png', import.meta.url).href,
+          description: `Emily Carter is a seasoned business analyst with a keen eye for detail and a passion for helping organizations make data-driven decisions.`,
         },
       ],
     }

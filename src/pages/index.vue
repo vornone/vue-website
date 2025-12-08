@@ -186,7 +186,7 @@ export default defineComponent({
         class="flex flex-col w-full items-center lg:h-170 h-full justify-center gap-5 lg:px-0 z-10"
       >
         <h2 class="text-center lg:w-1/2 w-3/4 lg:text-lg">
-          Presented by Green Route Cambodia Enterprise Co Ltd
+          Presented by Green Road Solution Enterprise Co Ltd
         </h2>
         <h1 class="lg:text-7xl text-3xl text-center w-full font-bold text-primary">
           Strategic Planning & <br />Development Services
@@ -245,7 +245,7 @@ export default defineComponent({
               Driving Sustainable Innovation Across Industries
             </h1>
             <p class="py-6">
-              At Green Route Cambodia Enterprise, our mission is to lead by example in the global
+              At Green Road Solution Enterprise, our mission is to lead by example in the global
               shift towards sustainability. With a foundation deeply rooted in conservation, we are
               dedicated to transforming the business landscape through environmentally responsible
               practices and ethical sourcing. Our commitment extends across various sectors,
@@ -271,6 +271,7 @@ export default defineComponent({
           <div
             class="card card-compact shadow-sm shadow-primary bg-base-100 w-full"
             v-for="service in services"
+            :key="service.name"
           >
             <div class="card-body">
               <Icon :icon="service.icon" class="h-10 w-10 text-primary" />
@@ -285,7 +286,7 @@ export default defineComponent({
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center" data-aos="fade-in">
         <h1 class="lg:text-3xl text-xl text-center font-bold">
-          At GRC we’re proud to oversee a diverse range of subsidiaries. Each one plays a crucial
+          At GRS we’re proud to oversee a diverse range of subsidiaries. Each one plays a crucial
           role in our mission to deliver exceptional value across different sectors.
         </h1>
       </div>
@@ -306,7 +307,7 @@ export default defineComponent({
             data-aos="fade-up"
           >
             <li class="p-4 pb-2 text-md tracking-wide">What we Import to Cambodia</li>
-            <li class="list-row" v-for="item in importDetails">
+            <li class="list-row" v-for="item in importDetails" :key="item.name">
               <div></div>
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
@@ -314,7 +315,7 @@ export default defineComponent({
                     <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
                   </div>
                 </div>
-                <div class="flex flex-col" v-for="list in item.importList">
+                <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
                   <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
                 </div>
               </div>
@@ -325,7 +326,7 @@ export default defineComponent({
             data-aos="fade-up"
           >
             <li class="p-4 pb-2 text-sm tracking-wide">What we export from Cambodia</li>
-            <li class="list-row" v-for="item in exportDetails">
+            <li class="list-row" v-for="item in exportDetails" :key="item.name">
               <div></div>
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
@@ -333,7 +334,7 @@ export default defineComponent({
                     <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
                   </div>
                 </div>
-                <div class="flex flex-col" v-for="list in item.importList">
+                <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
                   <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
                 </div>
               </div>
@@ -380,7 +381,7 @@ export default defineComponent({
             <div class="w-full">
               <h1 class="text-2xl font-bold text-primary">Our Core Team</h1>
               <p class="py-6">
-                Our team at Green Route Cambodia Enterprise is passionate, innovative, and committed
+                Our team at Green Road Solution Enterprise is passionate, innovative, and committed
                 to sustainability, combining diverse expertise to drive impactful solutions across
                 various sectors.
               </p>
@@ -400,7 +401,7 @@ export default defineComponent({
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center">
         <h1 class="lg:text-4xl font-bold text-center md:text-4xl">
-          Green Route Cambodia Enterprise Co Ltd
+          Green Road Solution Enterprise Co Ltd
         </h1>
         <div>
           <button
