@@ -4,11 +4,11 @@
       <div class="hero-content flex-col lg:flex-row lg:gap-20">
         <div class="text-center lg:text-left lg:w-1/2">
           <h1 class="lg:text-3xl text-xl md:text-2xl font-regular">
-            {{ $t('contact') }} <strong class="font-bold">GRC Enterprise </strong>
+            {{ $t('contact') }} <strong class="font-bold">GRS Enterprise </strong>
             {{ $t('today') }}:
           </h1>
           <p class="py-6">
-            Contact Green Route Cambodia Enterprise for innovative, sustainable solutions across
+            Contact Green Road Solution Enterprise for innovative, sustainable solutions across
             various sectors. Our expertise in conservation, ethical sourcing, and cutting-edge
             technologies ensures impactful, environmentally responsible outcomes for your business
             needs.
@@ -30,7 +30,7 @@
               <div class="flex items-top gap-2">
                 <Icon icon="line-md:email-plus" class="text-primary h-5 w-5 mb-2" />
                 <p class="text-sm link">
-                  <a href="mailto:info@grc-enterprise.com">info@grc-enterprise.com</a>
+                  <a href="mailto:info@GRS-enterprise.com">info@GRS-enterprise.com</a>
                 </p>
               </div>
             </li>

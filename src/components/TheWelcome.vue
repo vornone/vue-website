@@ -76,9 +76,9 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
       >StackOverflow</a
     >. You should also follow the official
     <a href="https://bsky.app/profile/vuejs.org" target="_blank" rel="noopener">@vuejs.org</a>
-    Bluesky account or the
+    Bluesky a CC ount or the
     <a href="https://x.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    X account for latest news in the Vue world.
+    X a CC ount for latest news in the Vue world.
   </WelcomeItem>
 
   <WelcomeItem>

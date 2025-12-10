@@ -36,39 +36,6 @@
       >
         <ServiceCard :serviceDetail="services" />
       </div>
-      <!-- <div class="divider"></div>
-      <h1 class="text-3xl text-center w-full" id="designers" data-aos="fade-up">Our Developers</h1>
-      <h2 data-aos="fade-up" class="text- text-center w-full">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
-        porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
-        et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
-        placerat. Mauris lobortis eleifend maximus.
-      </h2>
-      <ul class="list bg-base-100 rounded-box shadow-md shadow-primary" data-aos="fade-up">
-        <li
-          v-for="subsidiary in subsidiaries"
-          :key="subsidiary.name"
-          class="list-row animate__animated animate__fadeIn"
-        >
-          <div>
-            <img
-              class="size-10 rounded-box bg-white border-1"
-              :src="subsidiary.image"
-              :alt="subsidiary.name"
-            />
-          </div>
-          <div>
-            <div class="text-lg font-semibold uppercase">{{ subsidiary.name }}</div>
-            <div class="text-sm opacity-60">{{ subsidiary.type }}</div>
-          </div>
-          <div class="list-col-wrap text-md w-full">
-            <p>{{ subsidiary.description }}</p>
-            <a class="link link-primary" :href="subsidiary.website" target="_blank">
-              Visit {{ subsidiary.name }} Website
-            </a>
-          </div>
-        </li>
-      </ul> -->
       <h2 class="lg:text-3xl text-center lg:w-3/4 my-5 lg:my-10" data-aos="fade-up">
         Our dynamic pricing strategy is designed to seamlessly adapt to your unique budget and
         evolving logistics and supply chain needs, ensuring optimal efficiency and value.
@@ -95,44 +62,10 @@ export default defineComponent({
   components: { ServiceCard },
   data() {
     return {
-      subsidiaries: [
-        {
-          name: 'AO Architects',
-          type: 'Architectural Design Firm',
-          image: new URL('@/assets/logos/ao_logo.png', import.meta.url).href,
-          website: 'https://aoarchitectsdesign.com/',
-          description: `We specialize in architecture and interior design that merges aesthetic appeal with
-                  sustainable functionality. Our team works globally, delivering projects that meet high
-                  standards of practicality and cost-efficiency. From master planning to advanced 3D
-                  visualization, we ensure each design reflects our distinctive Cambodian style and aligns
-                  with client visions.`,
-        },
-        {
-          name: 'Keha Home',
-          type: 'Interior Decor Design Studio',
-          image: new URL('@/assets/logos/keha_logo.png', import.meta.url).href,
-          website: 'https://aoarchitectsdesign.com/',
-          description: `Specializing in contemporary aesthetics, Keha Home offers uniquely designed furniture and art pieces that blend form and function. Our high-quality, innovative designs cater to art lovers and decorators, enhancing any space with elegance and modern charm.`,
-        },
-        {
-          name: 'Umbrella Development',
-          type: 'Construction Firm',
-          image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
-          description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
-        },
-        {
-          name: 'The Umbrella Cafe and Resort',
-          type: 'Cafe and Resort',
-          image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
-          website: 'https://umbrelladevelopment.com/',
-          description: `Specializing in residential and commercial developments, we focus on sustainability and modern design to exceed market expectations. Our projects, from boreys to expansive real estate ventures, are crafted to foster thriving communities and reshape skylines.`,
-        },
-      ],
       services: [
         {
           name: 'Customized Solutions',
-          description: `We provide customized solutions to match your business's unique needs. Our team collaborates with you closely, whether you're importing or exporting, to achieve your goals accurately.`,
+          description: `We provide customized solutions to match your business's unique needs. Our team collaborates with you closely, whether you're importing or exporting, to achieve your goals a CC urately.`,
           image:
             'https://images.unsplash.com/photo-1601897690942-bcacbad33e55?auto=format&fit=crop&w=800',
           url: 'https://example.com/service1',

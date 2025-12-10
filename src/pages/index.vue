@@ -38,7 +38,7 @@ export default defineComponent({
           name: 'Customized Solutions',
           image: 'information-technology',
           description:
-            'We provide customized solutions to match your business’s unique needs. Our team collaborates with you closely, whether you’re importing or exporting, to achieve your goals accurately.',
+            'We provide customized solutions to match your business’s unique needs. Our team collaborates with you closely, whether you’re importing or exporting, to achieve your goals a CC urately.',
           tags: [],
           url: '/services/information-technology',
         },
@@ -157,7 +157,7 @@ export default defineComponent({
               name: ' Sculptures & Statuettes',
             },
             {
-              name: ' Construction Accents & Tiles',
+              name: ' Construction A CC ents & Tiles',
             },
             {
               name: 'Traditional Art',
@@ -186,7 +186,7 @@ export default defineComponent({
         class="flex flex-col w-full items-center lg:h-170 h-full justify-center gap-5 lg:px-0 z-10"
       >
         <h2 class="text-center lg:w-1/2 w-3/4 lg:text-lg">
-          Presented by Green Route Cambodia Enterprise Co Ltd
+          Presented by Green Road Solution Enterprise Co Ltd
         </h2>
         <h1 class="lg:text-7xl text-3xl text-center w-full font-bold text-primary">
           Strategic Planning & <br />Development Services
@@ -224,7 +224,7 @@ export default defineComponent({
               <h1 class="text-3xl font-bold text-white">DEFINING THE GLOBAL ECONOMY</h1>
               <p class="py-6 lg:w-2/3 text-white">
                 An interconnected system where sustainability, innovation, and ethical business
-                practices drive long-term success. By promoting responsible trade, advanced
+                practices drive long-term su CC ess. By promoting responsible trade, advanced
                 technology, and data-driven solutions, we contribute to a more resilient and
                 inclusive global marketplace that balances economic growth with environmental and
                 social responsibility.
@@ -245,7 +245,7 @@ export default defineComponent({
               Driving Sustainable Innovation Across Industries
             </h1>
             <p class="py-6">
-              At Green Route Cambodia Enterprise, our mission is to lead by example in the global
+              At Green Road Solution Enterprise, our mission is to lead by example in the global
               shift towards sustainability. With a foundation deeply rooted in conservation, we are
               dedicated to transforming the business landscape through environmentally responsible
               practices and ethical sourcing. Our commitment extends across various sectors,
@@ -271,6 +271,7 @@ export default defineComponent({
           <div
             class="card card-compact shadow-sm shadow-primary bg-base-100 w-full"
             v-for="service in services"
+            :key="service.name"
           >
             <div class="card-body">
               <Icon :icon="service.icon" class="h-10 w-10 text-primary" />
@@ -285,7 +286,7 @@ export default defineComponent({
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center" data-aos="fade-in">
         <h1 class="lg:text-3xl text-xl text-center font-bold">
-          At GRC we’re proud to oversee a diverse range of subsidiaries. Each one plays a crucial
+          At GRS we’re proud to oversee a diverse range of subsidiaries. Each one plays a crucial
           role in our mission to deliver exceptional value across different sectors.
         </h1>
       </div>
@@ -294,8 +295,8 @@ export default defineComponent({
         <h1 class="text-2xl font-bold text-primary">Universal Export and Import</h1>
         <p class="lg:w-2/3">
           Our mission is to continually grow our operations, providing an expanding range of
-          solutions tailored to your needs. We strive to enhance our offerings, ensuring you have
-          access to diverse and innovative options that support your business’s success.
+          solutions tailored to your needs. We strive to enhance our offerings, ensuring you have a
+          CC ess to diverse and innovative options that support your business’s su CC ess.
         </p>
         <div
           class="flex flex-col md:flex-row lg:flex-row gap-5 w-full items-center"
@@ -306,7 +307,7 @@ export default defineComponent({
             data-aos="fade-up"
           >
             <li class="p-4 pb-2 text-md tracking-wide">What we Import to Cambodia</li>
-            <li class="list-row" v-for="item in importDetails">
+            <li class="list-row" v-for="item in importDetails" :key="item.name">
               <div></div>
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
@@ -314,7 +315,7 @@ export default defineComponent({
                     <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
                   </div>
                 </div>
-                <div class="flex flex-col" v-for="list in item.importList">
+                <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
                   <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
                 </div>
               </div>
@@ -325,7 +326,7 @@ export default defineComponent({
             data-aos="fade-up"
           >
             <li class="p-4 pb-2 text-sm tracking-wide">What we export from Cambodia</li>
-            <li class="list-row" v-for="item in exportDetails">
+            <li class="list-row" v-for="item in exportDetails" :key="item.name">
               <div></div>
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
@@ -333,7 +334,7 @@ export default defineComponent({
                     <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
                   </div>
                 </div>
-                <div class="flex flex-col" v-for="list in item.importList">
+                <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
                   <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
                 </div>
               </div>
@@ -357,7 +358,7 @@ export default defineComponent({
                 The significance of modern Khmer antiquities lies in their role in preserving
                 Cambodia’s cultural heritage, while addressing ethical concerns around sourcing
                 actual antiquities. These modern recreations adhere to a nuanced understanding of
-                the dos and don’ts in cultural representation, ensuring respect and accuracy.
+                the dos and don’ts in cultural representation, ensuring respect and a CC uracy.
                 Technological advances and knowledge of historical craftsmanship enable precise
                 reproductions without risking original artifacts or sites. This approach safeguards
                 Cambodia’s historical legacy, allowing it to educate and inspire without
@@ -368,39 +369,10 @@ export default defineComponent({
         </div>
       </div>
 
-      <!-- <div class="divider"></div>
-      <div class="flex w-full">
-        <div class="flex w-full p-0" data-aos="fade-up">
-          <div class="flex lg:flex-row flex-col-reverse lg:gap-20 gap-10 p-0">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800"
-              loading="lazy"
-              class="rounded-lg shadow-md lg:w-1/2 w-full h-50 lg:h-100 object-cover shadow-primary md:h-100"
-            />
-            <div class="w-full">
-              <h1 class="text-2xl font-bold text-primary">Our Core Team</h1>
-              <p class="py-6">
-                Our team at Green Route Cambodia Enterprise is passionate, innovative, and committed
-                to sustainability, combining diverse expertise to drive impactful solutions across
-                various sectors.
-              </p>
-              <div>
-                <button
-                  class="btn btn-primary btn-soft border-1 border-primary hover:shadow-xl shadow-primary light:hover:text-white"
-                  v-on:click="goToUrl('about')"
-                >
-                  Go to our team <Icon icon="material-symbols:arrow-right-alt-rounded" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center">
         <h1 class="lg:text-4xl font-bold text-center md:text-4xl">
-          Green Route Cambodia Enterprise Co Ltd
+          Green Road Solution Enterprise Co Ltd
         </h1>
         <div>
           <button

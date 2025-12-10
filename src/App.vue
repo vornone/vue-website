@@ -6,7 +6,7 @@ import { useRoute } from 'vue-router'
 import { computed, ref, onMounted, watch } from 'vue'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
-import grcLogo from '@/assets/logos/grc_logo_frame.png'
+import grsLogo from '@/assets/logos/grs-logo.png'
 import { setLanguage } from '@/functions/setLanguage'
 // import { supabase } from './lib/supabaseClient'
 // Define supported locales type
@@ -43,7 +43,14 @@ const pageTitle = computed(() => {
 })
 // Theme state
 const isDarkTheme = ref(false)
-
+const isActive = (path: string) => {
+  return route.path === path || route.path.startsWith(path + '/')
+}
+const isCurrentRoute = (path: string) => {
+  return route.path === path || route.path.startsWith(path + '/')
+    ? 'underline underline-offset-4 decoration-2 decoration-primary'
+    : ''
+}
 // Function to toggle theme
 const toggleTheme = () => {
   isDarkTheme.value = !isDarkTheme.value
@@ -55,13 +62,19 @@ const toggleTheme = () => {
 onMounted(() => {
   const savedTheme = localStorage.getItem('theme')
   const savedLocale = localStorage.getItem('locale') as SupportedLocale
+
   if (savedLocale && (savedLocale === 'en' || savedLocale === 'kh')) {
     selectedLocale.value = savedLocale
   }
+
   if (savedTheme) {
     isDarkTheme.value = savedTheme === 'dim'
-    document.documentElement.setAttribute('data-theme', savedTheme)
+  } else {
+    isDarkTheme.value = true // Default to dark theme
+    localStorage.setItem('theme', 'dim')
   }
+
+  document.documentElement.setAttribute('data-theme', isDarkTheme.value ? 'dim' : 'emerald')
 })
 </script>
 
@@ -79,17 +92,6 @@ onMounted(() => {
             @change="toggleTheme"
           />
 
-          <!-- sun icon -->
-          <svg
-            class="swap-off h-5 w-5 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
-            />
-          </svg>
-
           <!-- moon icon -->
           <svg
             class="swap-on h-5 w-5 fill-current"
@@ -100,38 +102,67 @@ onMounted(() => {
               d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
             />
           </svg>
+          <!-- sun icon -->
+          <svg
+            class="swap-off h-5 w-5 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+            />
+          </svg>
         </label>
-        <a href="/"><img :src="grcLogo" alt="grc-logo" class="h-12 lg:ml-10 ml-2" /></a>
-        <!-- <a class="btn btn-ghost text-xl" href="/">grc-enterprise</a> -->
+        <a href="/"
+          ><img
+            :src="grsLogo"
+            alt="GRS-logo"
+            class="lg:h-12 h-10 lg:ml-10 ml-2 hover:cursor-pointer hover:shadow-lg shadow-primary transition-shadow duration-300 ease-in-out rounded-lg shadow-xs"
+        /></a>
+        <!-- <a class="btn btn-ghost text-xl" href="/">GRS-enterprise</a> -->
       </div>
       <div class="navbar-end lg:flex">
         <ul class="menu menu-horizontal hidden lg:flex">
-          <li><a href="/our-company">Our Company</a></li>
-          <li><a href="/partners">Partners</a></li>
+          <li>
+            <a href="/our-company" :class="isCurrentRoute('/our-company')">Our Company</a>
+          </li>
+          <li>
+            <a href="/partners" :class="isCurrentRoute('/partners')">Partners</a>
+          </li>
           <li class="dropdown dropdown-hover dropdown-center">
-            <a href="/services"
+            <a href="/services" :class="isCurrentRoute('/services')"
               >Services <span><Icon icon="mdi-light:chevron-down" class="h-5 w-5" /></span
             ></a>
             <ul class="menu menu-sm dropdown-content bg-base-100 w-52 rounded-box shadow">
               <li>
-                <a href="/services/construction-and-design"
-                  ><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a
+                <a
+                  href="/services/construction-and-design"
+                  :class="isCurrentRoute('/services/construction-and-design')"
                 >
+                  <Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design
+                </a>
               </li>
               <li>
-                <a href="/services/information-technology"
-                  ><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology</a
+                <a
+                  href="/services/information-technology"
+                  :class="isCurrentRoute('/services/information-technology')"
                 >
+                  <Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology
+                </a>
               </li>
               <li>
-                <a href="/services/logistics-and-supply-chain"
-                  ><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a
+                <a
+                  href="/services/logistics-and-supply-chain"
+                  :class="isCurrentRoute('/services/logistics-and-supply-chain')"
                 >
+                  <Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain
+                </a>
               </li>
             </ul>
           </li>
-          <!-- <li><a href="/about">About</a></li> -->
-          <li><a href="/contact">Contact</a></li>
+          <li>
+            <a href="/contact" :class="isCurrentRoute('/contact')">Contact</a>
+          </li>
         </ul>
         <select
           defaultValue="en"
@@ -187,7 +218,7 @@ onMounted(() => {
                 </li>
               </ul>
             </li>
-            <!-- <li><a href="/about">About</a></li> -->
+
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -216,31 +247,44 @@ onMounted(() => {
           <div class="drawer-side">
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
             <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
-              <li><a href="/our-company">Our Company</a></li>
-              <li><a href="/partners">Partners</a></li>
               <li>
-                <a href="/services"> Services</a>
+                <a href="/our-company" :class="isCurrentRoute('/our-company')">Our Company</a>
+              </li>
+              <li>
+                <a href="/partners" :class="isCurrentRoute('/partners')">Partners</a>
+              </li>
+              <li>
+                <a href="/services" :class="isCurrentRoute('/services')"> Services</a>
                 <ul class="p-2">
                   <li>
-                    <a href="/services/construction-and-design"
-                      ><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a
+                    <a
+                      href="/services/construction-and-design"
+                      :class="isCurrentRoute('/services/construction-and-design')"
                     >
+                      <Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design
+                    </a>
                   </li>
                   <li>
-                    <a href="/services/information-technology"
-                      ><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information
-                      Technology</a
+                    <a
+                      href="/services/information-technology"
+                      :class="isCurrentRoute('/services/information-technology')"
                     >
+                      <Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology
+                    </a>
                   </li>
                   <li>
-                    <a href="/services/logistics-and-supply-chain"
-                      ><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a
+                    <a
+                      href="/services/logistics-and-supply-chain"
+                      :class="isCurrentRoute('/services/logistics-and-supply-chain')"
                     >
+                      <Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain
+                    </a>
                   </li>
                 </ul>
               </li>
-              <!-- <li><a href="/about">About</a></li> -->
-              <li><a href="/contact">Contact</a></li>
+              <li>
+                <a href="/contact" :class="isCurrentRoute('/contact')">Contact</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -266,12 +310,12 @@ onMounted(() => {
     <footer
       class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10"
     >
-      <nav class="grid grid-flow-col gap-4" v-motion-fade-visible>
+      <nav class="grid grid-cols-2 lg:grid-cols-6 gap-4" v-motion-fade-visible>
         <a class="link link-hover" href="/">Home</a>
+        <a class="link link-hover" href="/our-company">Our Company</a>
         <a class="link link-hover" href="/partners">Partners</a>
         <a class="link link-hover" href="/services">Services</a>
         <a class="link link-hover" href="/contact">Contact</a>
-        <!-- <a class="link link-hover" href="/about">About</a> -->
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4" v-motion-fade-visible>
@@ -318,74 +362,10 @@ onMounted(() => {
       </nav>
       <aside>
         <p>
-          Copyright © {{ new Date().getFullYear() }} - All right reserved by Green Route Cambodia
+          Copyright © {{ new Date().getFullYear() }} - All right reserved by Green Road Solution
           Enterprise
         </p>
       </aside>
     </footer>
   </div>
 </template>
-
-<!-- <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style> -->
