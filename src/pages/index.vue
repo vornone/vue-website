@@ -369,35 +369,6 @@ export default defineComponent({
         </div>
       </div>
 
-      <!-- <div class="divider"></div>
-      <div class="flex w-full">
-        <div class="flex w-full p-0" data-aos="fade-up">
-          <div class="flex lg:flex-row flex-col-reverse lg:gap-20 gap-10 p-0">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800"
-              loading="lazy"
-              class="rounded-lg shadow-md lg:w-1/2 w-full h-50 lg:h-100 object-cover shadow-primary md:h-100"
-            />
-            <div class="w-full">
-              <h1 class="text-2xl font-bold text-primary">Our Core Team</h1>
-              <p class="py-6">
-                Our team at Green Road Solution Enterprise is passionate, innovative, and committed
-                to sustainability, combining diverse expertise to drive impactful solutions across
-                various sectors.
-              </p>
-              <div>
-                <button
-                  class="btn btn-primary btn-soft border-1 border-primary hover:shadow-xl shadow-primary light:hover:text-white"
-                  v-on:click="goToUrl('about')"
-                >
-                  Go to our team <Icon icon="material-symbols:arrow-right-alt-rounded" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
       <div class="divider"></div>
       <div class="flex flex-col gap-5 w-full items-center">
         <h1 class="lg:text-4xl font-bold text-center md:text-4xl">

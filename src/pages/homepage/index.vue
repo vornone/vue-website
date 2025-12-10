@@ -114,8 +114,7 @@ export default defineComponent({
           description: `Specializing in contemporary aesthetics, Vase Home offers uniquely designed furniture and art pieces that blend form and function. Our high-quality, innovative designs cater to art lovers and decorators, enhancing any space with elegance and modern charm.`,
         },
         {
-          name: 'Sea-Shell Development
-',
+          name: 'Sea-Shell Development',
           type: 'Construction Firm',
           image: new URL('@/assets/logos/umbrella_development_logo.png', import.meta.url).href,
           website: 'https://umbrelladevelopment.com/',

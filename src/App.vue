@@ -117,15 +117,12 @@ onMounted(() => {
           ><img
             :src="grsLogo"
             alt="GRS-logo"
-            class="lg:h-15 h-10 lg:ml-10 ml-2 hover:cursor-pointer hover:shadow-lg shadow-primary transition-shadow duration-300 ease-in-out rounded-lg shadow-xs"
+            class="lg:h-12 h-10 lg:ml-10 ml-2 hover:cursor-pointer hover:shadow-lg shadow-primary transition-shadow duration-300 ease-in-out rounded-lg shadow-xs"
         /></a>
         <!-- <a class="btn btn-ghost text-xl" href="/">GRS-enterprise</a> -->
       </div>
       <div class="navbar-end lg:flex">
         <ul class="menu menu-horizontal hidden lg:flex">
-          <li>
-            <a href="/about" :class="isCurrentRoute('/about')">About</a>
-          </li>
           <li>
             <a href="/our-company" :class="isCurrentRoute('/our-company')">Our Company</a>
           </li>
@@ -221,7 +218,7 @@ onMounted(() => {
                 </li>
               </ul>
             </li>
-            <!-- <li><a href="/about">About</a></li> -->
+
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -316,11 +313,9 @@ onMounted(() => {
       <nav class="grid grid-cols-2 lg:grid-cols-6 gap-4" v-motion-fade-visible>
         <a class="link link-hover" href="/">Home</a>
         <a class="link link-hover" href="/our-company">Our Company</a>
-        <a class="link link-hover" href="/about">About</a>
         <a class="link link-hover" href="/partners">Partners</a>
         <a class="link link-hover" href="/services">Services</a>
         <a class="link link-hover" href="/contact">Contact</a>
-        <!-- <a class="link link-hover" href="/about">About</a> -->
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4" v-motion-fade-visible>

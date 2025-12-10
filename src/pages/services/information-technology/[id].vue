@@ -6,22 +6,20 @@
       <router-link to="/services/information-technology">Back to News</router-link>
     </template>
     <template v-else>
-      <!-- Redirect to catchAll.vue if the news item doesn't exist -->
       <p>Redirecting...</p>
     </template>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   computed: {
     news() {
-      const newsName = this.$route.params.id
+      const newsName = this.$route.params
       const newsItem = this.newsItems.find((item) => item.title === newsName)
 
-      // If the news item doesn't exist, redirect to catchAll.vue
       if (!newsItem) {
-        this.$router.replace('/404') // Redirect to the catch-all route
+        this.$router.replace('/404')
         return null
       }
 
