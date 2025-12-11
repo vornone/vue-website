@@ -11,26 +11,24 @@
   </div>
 </template>
 
-<script lang="ts">
-import { itNewsItems } from '@/data/news'
-export default {
-  computed: {
-    news() {
-      const newsName = this.$route.params
-      const newsItem = this.newsItems.find((item) => item.title === newsName)
+<script setup lang="ts">
+import { computed, watchEffect } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { itNewsItems, type NewsItem } from '@/data/news'
 
-      if (!newsItem) {
-        this.$router.replace('/404')
-        return null
-      }
+const route = useRoute()
+const router = useRouter()
 
-      return newsItem
-    },
-  },
-  data() {
-    return {
-      newsItems: itNewsItems,
-    }
-  },
-}
+const news = computed<NewsItem | null>(() => {
+  const params = route.params as { id?: string }
+  const id = params.id
+  if (!id) return null
+  return itNewsItems.find((item) => item.id === id) ?? null
+})
+
+watchEffect(() => {
+  if (!news.value) {
+    router.replace('/404')
+  }
+})
 </script>

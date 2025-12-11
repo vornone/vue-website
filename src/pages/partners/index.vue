@@ -72,8 +72,8 @@ AOS.init()
 export default {
   data() {
     return {
-      subsidiaries: [],
-      partnerDetail: [],
+      subsidiaries: [] as import('@/data/company').Subsidiary[],
+      partnerDetail: [] as import('@/data/company').PartnerDetail[],
     }
   },
   created() {

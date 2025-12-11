@@ -110,8 +110,8 @@ export default {
   },
   data() {
     return {
-      subsidiaries: [],
-      teamDetails: [],
+      subsidiaries: [] as import('@/data/company').Subsidiary[],
+      teamDetails: [] as import('@/data/company').TeamMember[],
     }
   },
   created() {

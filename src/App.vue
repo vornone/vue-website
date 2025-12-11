@@ -127,16 +127,11 @@ onMounted(() => {
         <ul class="menu menu-horizontal hidden lg:flex">
           <template v-for="item in primaryNav" :key="item.path">
             <li v-if="!item.children">
-              <a :href="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</a>
+              <a :href="item.path" :class="isCurrentRoute(item.path) +' cursor-pointer'">{{ item.label }}</a>
             </li>
             <li
               v-else
-              class="dropdown dropdown-center"
-              :class="{ 'dropdown-open': servicesOpen }"
-              @mouseenter="servicesOpen = true"
-              @mouseleave="servicesOpen = false"
-              @focusin="servicesOpen = true"
-              @focusout="servicesOpen = false"
+
             >
               <a :href="item.path" :class="isCurrentRoute(item.path)" tabindex="0">
                 {{ item.label }}

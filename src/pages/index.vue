@@ -136,7 +136,7 @@ export default defineComponent({
             :key="service.name"
           >
             <div class="card-body">
-              <Icon :icon="service.icon" class="h-10 w-10 text-primary" />
+              <Icon v-if="service.icon" :icon="service.icon" class="h-10 w-10 text-primary" />
               <h2 class="card-title">{{ service.name }}</h2>
               <p class="opacity-60">
                 {{ service.description }}
@@ -174,7 +174,7 @@ export default defineComponent({
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
                   <div class="flex items-center gap-2">
-                    <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
+                    <Icon v-if="item.icon" :icon="item.icon" class="h-5 w-5" />{{ item.name }}
                   </div>
                 </div>
                 <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
@@ -193,7 +193,7 @@ export default defineComponent({
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
                   <div class="flex items-center gap-2">
-                    <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
+                    <Icon v-if="item.icon" :icon="item.icon" class="h-5 w-5" />{{ item.name }}
                   </div>
                 </div>
                 <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
