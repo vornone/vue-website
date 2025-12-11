@@ -34,7 +34,7 @@ export default defineComponent({
 <template>
   <div
     class="absolute lg:top-10 top-0 z-[-1] lg:h-screen min-h-200 w-full bg-no-repeat bg-center opacity-20 bg-contain bg-100"
-    style="background-image: url('/kh.svg')"
+    style="background-image: url('kh.svg')"
   ></div>
   <div
     class="absolute top-0 z-[-2] h-screen w-full bg-[radial-gradient(100%_50%_at_50%_0%,rgba(106,143,106,1)_0,rgba(106,143,106,0.2)_50%,rgba(0,163,255,0)_100%)] light:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(98,175,97,1)_0,rgba(106,143,106,0.2)_50%,rgba(0,163,255,0)_100%)]"
