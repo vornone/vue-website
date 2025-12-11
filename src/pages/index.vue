@@ -239,9 +239,9 @@ export default defineComponent({
         <div>
           <button
             class="btn btn-primary btn-soft border-1 border-primary hover:shadow-xl shadow-primary light:hover:text-white"
-            v-on:click="goToUrl('contact')"
+            v-on:click="goToUrl('gumroad')"
           >
-            Connect with us <Icon icon="material-symbols:arrow-right-alt-rounded" />
+            Get your Template Here <Icon icon="material-symbols:arrow-right-alt-rounded" />
           </button>
         </div>
       </div>
