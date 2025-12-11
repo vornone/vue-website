@@ -7,6 +7,7 @@ import ServiceCard from '@/components/card/ServiceCard.vue'
 import type { Service } from '@/types/service'
 import { scrollToSection } from '@/functions/scrollToElement'
 import Partners from '@/components/partners/Partners.vue'
+import { indexServices, importDetails, exportDetails } from '@/data/indexPage'
 
 AOS.init()
 
@@ -23,147 +24,14 @@ export default defineComponent({
   components: { ServiceCard, Partners, Icon },
   data() {
     return {
-      services: [
-        {
-          icon: 'hugeicons:internet',
-          name: 'Global Network, Local Expertise',
-          image: 'construction-and-design',
-          description:
-            'We use our worldwide network to deliver goods quickly and efficiently. Our local knowledge helps us smoothly handle trade regulations, offering you a straightforward experience.',
-          url: '/services/construction-and-design',
-          tags: [],
-        },
-        {
-          icon: 'hugeicons:book-02',
-          name: 'Customized Solutions',
-          image: 'information-technology',
-          description:
-            'We provide customized solutions to match your business’s unique needs. Our team collaborates with you closely, whether you’re importing or exporting, to achieve your goals a CC urately.',
-          tags: [],
-          url: '/services/information-technology',
-        },
-        {
-          icon: 'hugeicons:leaf-01',
-          name: 'Sustainable Sourcing',
-          image: 'information-technology',
-          description:
-            'We prioritize conservation and sustainability in our sourcing strategies, choosing suppliers and products that meet strict environmental standards. This ensures your business helps support a healthier planet.',
-          tags: [],
-          url: '/services/information-technology',
-        },
-        {
-          icon: 'hugeicons:save-money-dollar',
-          name: 'Transparent Pricing',
-          image: 'information-technology',
-          description:
-            'Our pricing is clear and fair, with a transparent approach that avoids hidden fees, guaranteeing you get great value. Our competitive prices match the high-quality, sustainable products we provide.',
-          tags: [],
-          url: '/services/information-technology',
-        },
-      ],
-      importDetails: [
-        {
-          icon: 'hugeicons:delivery-box-01',
-          name: 'Consumer Goods',
-          description: '',
-          importList: [
-            {
-              icon: 'hugeicons:vegetarian-food',
-              name: 'Process Foods',
-            },
-            {
-              icon: 'hugeicons:meat',
-              name: 'Electronics',
-            },
-            {
-              name: 'Vehicles and Parts',
-            },
-          ],
-        },
-        {
-          icon: 'hugeicons:first-aid-kit',
-          name: 'Pharmaceutical',
-          description: '',
-          importList: [
-            {
-              name: ' Nutritional Supplements',
-            },
-            {
-              name: 'Veterinary Pharmaceuticals',
-            },
-            {
-              name: 'Over-the-Counter Medications',
-            },
-          ],
-        },
-        {
-          icon: 'hugeicons:ai-brain-02',
-          name: 'Machinery and Equipment',
-          description: '',
-          importList: [
-            {
-              name: ' Textile Machinery',
-            },
-            {
-              name: 'Construction Machinery',
-            },
-            {
-              name: 'Agricultural Equipment',
-            },
-          ],
-        },
-      ],
-      exportDetails: [
-        {
-          icon: 'hugeicons:organic-food',
-          name: 'Agriculture',
-          description: '',
-          importList: [
-            {
-              icon: 'hugeicons:vegetarian-food',
-              name: 'Agricultural Products',
-            },
-            {
-              icon: 'hugeicons:meat',
-              name: 'Processed Foods',
-            },
-            {
-              name: 'Beverages',
-            },
-          ],
-        },
-        {
-          icon: 'hugeicons:t-shirt',
-          name: 'Textiles',
-          description: '',
-          importList: [
-            {
-              name: '  Raw Materials',
-            },
-            {
-              name: 'Fabric and Textile Products',
-            },
-            {
-              name: 'Finished Goods',
-            },
-          ],
-        },
-        {
-          icon: 'hugeicons:pisa-tower',
-          name: 'Modern Khmer Antiquities',
-          description: '',
-          importList: [
-            {
-              name: ' Sculptures & Statuettes',
-            },
-            {
-              name: ' Construction A CC ents & Tiles',
-            },
-            {
-              name: 'Traditional Art',
-            },
-          ],
-        },
+      services: indexServices,
+      importDetails: importDetails,
+      exportDetails: exportDetails,
+      navigationMenu: [
+        { name: 'Home', section: 'home' },
+        { name: 'Services', section: 'services' },
+        { name: 'About', section: 'about' },
+        { name: 'Contact', section: 'contact' },
       ],
     }
   },
@@ -177,18 +45,18 @@ export default defineComponent({
   <div
     class="absolute top-0 z-[-2] h-screen w-full bg-[radial-gradient(100%_50%_at_50%_0%,rgba(106,143,106,1)_0,rgba(106,143,106,0.2)_50%,rgba(0,163,255,0)_100%)] light:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(98,175,97,1)_0,rgba(106,143,106,0.2)_50%,rgba(0,163,255,0)_100%)]"
   ></div>
-  <div class="flex flex-col w-full h-full items-center pb-20 px-5" data-aos="fade-in">
+  <div class="flex flex-col items-center w-full h-full px-5 pb-20" data-aos="fade-in">
     <div
-      class="flex flex-col w-full lg:h-50dvh lg:h-170 h-150 lg:gap-10 items-center"
+      class="flex flex-col items-center w-full lg:h-50dvh lg:h-170 h-150 lg:gap-10"
       data-aos="fade-in"
     >
       <div
-        class="flex flex-col w-full items-center lg:h-170 h-full justify-center gap-5 lg:px-0 z-10"
+        class="z-10 flex flex-col items-center justify-center w-full h-full gap-5 lg:h-170 lg:px-0"
       >
-        <h2 class="text-center lg:w-1/2 w-3/4 lg:text-lg">
+        <h2 class="w-3/4 text-center lg:w-1/2 lg:text-lg">
           Presented by Green Road Solution Enterprise Co Ltd
         </h2>
-        <h1 class="lg:text-7xl text-3xl text-center w-full font-bold text-primary">
+        <h1 class="w-full text-3xl font-bold text-center lg:text-7xl text-primary">
           Strategic Planning & <br />Development Services
         </h1>
         <h2 class="text-center lg:w-1/2 lg:text-lg">Sustainable Trade Solutions</h2>
@@ -200,11 +68,11 @@ export default defineComponent({
         </button>
       </div>
     </div>
-    <div class="flex flex-col lg:w-3/4 items-center lg:gap-25 gap-25 w-full">
-      <div class="flex flex-col w-full items-center gap-10">
+    <div class="flex flex-col items-center w-full lg:w-3/4 lg:gap-25 gap-25">
+      <div class="flex flex-col items-center w-full gap-10">
         <h1 class="text-xl font-bold">Trusted by top companies</h1>
         <transition
-          enter-active-class="transition-opacity duration-1500 ease-in-out"
+          enter-active-class="transition-opacity ease-in-out duration-1500"
           enter-from-class="opacity-0"
           enter-to-class="opacity-100"
         >
@@ -213,16 +81,16 @@ export default defineComponent({
       </div>
       <div class="flex flex-col w-full">
         <div
-          class="hero w-full h-150 rounded-lg overflow-hidden shadow-md shadow-primary"
+          class="w-full overflow-hidden rounded-lg shadow-md hero h-150 shadow-primary"
           style="
             background-image: url(https://images.unsplash.com/photo-1527908147823-068bba50c255?auto=format&fit=crop&w=2400);
           "
         >
           <div class="hero-overlay"></div>
-          <div class="hero-content text-neutral-content text-center">
+          <div class="text-center hero-content text-neutral-content">
             <div class="flex flex-col items-center w-full">
               <h1 class="text-3xl font-bold text-white">DEFINING THE GLOBAL ECONOMY</h1>
-              <p class="py-6 lg:w-2/3 text-white">
+              <p class="py-6 text-white lg:w-2/3">
                 An interconnected system where sustainability, innovation, and ethical business
                 practices drive long-term su CC ess. By promoting responsible trade, advanced
                 technology, and data-driven solutions, we contribute to a more resilient and
@@ -234,11 +102,11 @@ export default defineComponent({
         </div>
       </div>
       <div class="flex w-full p-0" data-aos="fade-up">
-        <div class="flex lg:flex-row-reverse flex-col-reverse lg:gap-20 gap-10 p-0">
+        <div class="flex flex-col-reverse gap-10 p-0 lg:flex-row-reverse lg:gap-20">
           <img
             src="https://images.unsplash.com/photo-1589895257704-697b5d525c94?auto=format&fit=crop&w=800"
             loading="lazy"
-            class="rounded-lg shadow-md lg:w-1/2 w-full h-50 lg:h-100 object-cover shadow-primary md:h-100"
+            class="object-cover w-full rounded-lg shadow-md lg:w-1/2 h-50 lg:h-100 shadow-primary md:h-100"
           />
           <div class="w-full">
             <h1 class="text-2xl font-bold text-primary">
@@ -256,7 +124,7 @@ export default defineComponent({
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-5 w-full" data-aos="fade-up">
+      <div class="flex flex-col w-full gap-5" data-aos="fade-up">
         <h1 class="text-2xl font-bold text-primary">Our Capabilities</h1>
         <p class="lg:w-2/3">
           Our capabilities include a global network for fast, efficient delivery and local expertise
@@ -265,16 +133,16 @@ export default defineComponent({
           rates provide high-quality, eco-friendly products tailored to your business needs.
         </p>
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
           style="grid-auto-rows: 1fr"
         >
           <div
-            class="card card-compact shadow-sm shadow-primary bg-base-100 w-full"
+            class="w-full shadow-sm card card-compact shadow-primary bg-base-100"
             v-for="service in services"
             :key="service.name"
           >
             <div class="card-body">
-              <Icon :icon="service.icon" class="h-10 w-10 text-primary" />
+              <Icon :icon="service.icon" class="w-10 h-10 text-primary" />
               <h2 class="card-title">{{ service.name }}</h2>
               <p class="opacity-60">
                 {{ service.description }}
@@ -284,14 +152,14 @@ export default defineComponent({
         </div>
       </div>
       <div class="divider"></div>
-      <div class="flex flex-col gap-5 w-full items-center" data-aos="fade-in">
-        <h1 class="lg:text-3xl text-xl text-center font-bold">
+      <div class="flex flex-col items-center w-full gap-5" data-aos="fade-in">
+        <h1 class="text-xl font-bold text-center lg:text-3xl">
           At GRS we’re proud to oversee a diverse range of subsidiaries. Each one plays a crucial
           role in our mission to deliver exceptional value across different sectors.
         </h1>
       </div>
       <div class="divider"></div>
-      <div class="flex flex-col gap-5 w-full" data-aos="fade-up">
+      <div class="flex flex-col w-full gap-5" data-aos="fade-up">
         <h1 class="text-2xl font-bold text-primary">Universal Export and Import</h1>
         <p class="lg:w-2/3">
           Our mission is to continually grow our operations, providing an expanding range of
@@ -299,30 +167,30 @@ export default defineComponent({
           CC ess to diverse and innovative options that support your business’s su CC ess.
         </p>
         <div
-          class="flex flex-col md:flex-row lg:flex-row gap-5 w-full items-center"
+          class="flex flex-col items-center w-full gap-5 md:flex-row lg:flex-row"
           data-aos="fade-in"
         >
           <ul
-            class="list bg-base-100 rounded-box shadow-sm shadow-primary w-full"
+            class="w-full shadow-sm list bg-base-100 rounded-box shadow-primary"
             data-aos="fade-up"
           >
-            <li class="p-4 pb-2 text-md tracking-wide">What we Import to Cambodia</li>
+            <li class="p-4 pb-2 tracking-wide text-md">What we Import to Cambodia</li>
             <li class="list-row" v-for="item in importDetails" :key="item.name">
               <div></div>
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
                   <div class="flex items-center gap-2">
-                    <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
+                    <Icon :icon="item.icon" class="w-5 h-5" />{{ item.name }}
                   </div>
                 </div>
                 <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
-                  <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
+                  <p class="mb-1 text-sm opacity-60">{{ list.name }}</p>
                 </div>
               </div>
             </li>
           </ul>
           <ul
-            class="list bg-base-100 rounded-box shadow-sm shadow-primary w-full"
+            class="w-full shadow-sm list bg-base-100 rounded-box shadow-primary"
             data-aos="fade-up"
           >
             <li class="p-4 pb-2 text-sm tracking-wide">What we export from Cambodia</li>
@@ -331,11 +199,11 @@ export default defineComponent({
               <div>
                 <div class="flex mb-2 text-lg font-semibold text-primary">
                   <div class="flex items-center gap-2">
-                    <Icon :icon="item.icon" class="h-5 w-5" />{{ item.name }}
+                    <Icon :icon="item.icon" class="w-5 h-5" />{{ item.name }}
                   </div>
                 </div>
                 <div class="flex flex-col" v-for="list in item.importList" :key="list.name">
-                  <p class="text-sm opacity-60 mb-1">{{ list.name }}</p>
+                  <p class="mb-1 text-sm opacity-60">{{ list.name }}</p>
                 </div>
               </div>
             </li>
@@ -344,11 +212,11 @@ export default defineComponent({
       </div>
       <div class="flex w-full">
         <div class="flex w-full p-0" data-aos="fade-up">
-          <div class="flex lg:flex-row-reverse flex-col-reverse lg:gap-20 gap-10 p-0">
+          <div class="flex flex-col-reverse gap-10 p-0 lg:flex-row-reverse lg:gap-20">
             <img
               src="https://images.unsplash.com/photo-1644614827935-e54e9ba8f23a?auto=format&fit=crop&w=800"
               loading="lazy"
-              class="rounded-lg shadow-md lg:w-1/2 w-full h-50 lg:h-100 object-cover shadow-primary md:h-100"
+              class="object-cover w-full rounded-lg shadow-md lg:w-1/2 h-50 lg:h-100 shadow-primary md:h-100"
             />
             <div class="w-full">
               <h1 class="text-2xl font-bold text-primary">
@@ -370,8 +238,8 @@ export default defineComponent({
       </div>
 
       <div class="divider"></div>
-      <div class="flex flex-col gap-5 w-full items-center">
-        <h1 class="lg:text-4xl font-bold text-center md:text-4xl">
+      <div class="flex flex-col items-center w-full gap-5">
+        <h1 class="font-bold text-center lg:text-4xl md:text-4xl">
           Green Road Solution Enterprise Co Ltd
         </h1>
         <div>

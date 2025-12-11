@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import './assets/tailwind.css' // Import the Tailwind CSS file
+import './assets/tailwind.css'
 import { Icon } from '@iconify/vue'
 import { useRoute } from 'vue-router'
 import { computed, ref, onMounted, watch } from 'vue'
@@ -8,57 +8,61 @@ import 'aos/dist/aos.css'
 import AOS from 'aos'
 import grsLogo from '@/assets/logos/grs-logo.png'
 import { setLanguage } from '@/functions/setLanguage'
-// import { supabase } from './lib/supabaseClient'
-// Define supported locales type
-type SupportedLocale = 'en' | 'kh'
-// console.log(supabase)
-// Create a ref to store the selected locale
-const selectedLocale = ref<SupportedLocale>('en')
 
-// Function to handle language change
+type SupportedLocale = 'en' | 'kh'
+
+const selectedLocale = ref<SupportedLocale>('en')
+const isDarkTheme = ref(false)
+
+const navigationMenu = ref([
+  { name: 'Our Company', path: '/our-company' },
+  { name: 'Partners', path: '/partners' },
+  { name: 'Services', path: '/services' },
+  { name: 'Contact', path: '/contact' },
+])
+
+const servicesMenu = ref([
+  { name: 'Construction & Design', path: '/services/construction-and-design', icon: 'mdi-light:home' },
+  { name: 'Information Technology', path: '/services/information-technology', icon: 'mdi-light:content-save' },
+  { name: 'Logistics & Supply Chain', path: '/services/logistics-and-supply-chain', icon: 'mdi-light:truck' },
+])
+
 const handleLanguageChange = () => {
   setLanguage(selectedLocale.value)
 }
+
 AOS.init()
 const route = useRoute()
 
 const isNotFound = computed(() => {
   return route.name === '/[...catchAll]'
 })
-const pageTitle = computed(() => {
-  const segments = route.path.split('/').filter(Boolean) // Remove empty segments
 
-  // Return the second-to-last segment if the URL has more than 3 levels
+const pageTitle = computed(() => {
+  const segments = route.path.split('/').filter(Boolean)
   if (segments.length > 2) {
     return segments[segments.length - 2]
       .replace(/-/g, ' ')
       .replace(/\b\w/g, (char) => char.toUpperCase())
   }
-
-  if (segments.length === 0 || route.path === '/') return '' // Return empty string for root path
-
+  if (segments.length === 0 || route.path === '/') return ''
   return segments[segments.length - 1]
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (char) => char.toUpperCase())
 })
-// Theme state
-const isDarkTheme = ref(false)
-const isActive = (path: string) => {
-  return route.path === path || route.path.startsWith(path + '/')
-}
+
 const isCurrentRoute = (path: string) => {
   return route.path === path || route.path.startsWith(path + '/')
     ? 'underline underline-offset-4 decoration-2 decoration-primary'
     : ''
 }
-// Function to toggle theme
+
 const toggleTheme = () => {
   isDarkTheme.value = !isDarkTheme.value
   document.documentElement.setAttribute('data-theme', isDarkTheme.value ? 'dim' : 'emerald')
   localStorage.setItem('theme', isDarkTheme.value ? 'dim' : 'emerald')
 }
 
-// Load theme preference from localStorage on mount
 onMounted(() => {
   const savedTheme = localStorage.getItem('theme')
   const savedLocale = localStorage.getItem('locale') as SupportedLocale
@@ -70,7 +74,7 @@ onMounted(() => {
   if (savedTheme) {
     isDarkTheme.value = savedTheme === 'dim'
   } else {
-    isDarkTheme.value = true // Default to dark theme
+    isDarkTheme.value = true
     localStorage.setItem('theme', 'dim')
   }
 
@@ -79,22 +83,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="flex flex-col min-h-screen">
     <header></header>
-    <div class="navbar bg-base-100 shadow-md px-4 z-99 sticky top-0 light:shadow-sm">
-      <div class="navbar-start gap-2">
+    <div class="sticky top-0 px-4 shadow-md navbar bg-base-100 z-99 light:shadow-sm">
+      <div class="gap-2 navbar-start">
         <label class="swap swap-rotate">
-          <!-- this hidden checkbox controls the state -->
           <input
             type="checkbox"
             class="theme-controller"
             :checked="isDarkTheme"
             @change="toggleTheme"
           />
-
-          <!-- moon icon -->
           <svg
-            class="swap-on h-5 w-5 fill-current"
+            class="w-5 h-5 fill-current swap-on"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -102,9 +103,8 @@ onMounted(() => {
               d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
             />
           </svg>
-          <!-- sun icon -->
           <svg
-            class="swap-off h-5 w-5 fill-current"
+            class="w-5 h-5 fill-current swap-off"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -117,51 +117,25 @@ onMounted(() => {
           ><img
             :src="grsLogo"
             alt="GRS-logo"
-            class="lg:h-12 h-10 lg:ml-10 ml-2 hover:cursor-pointer hover:shadow-lg shadow-primary transition-shadow duration-300 ease-in-out rounded-lg shadow-xs"
+            class="h-10 ml-2 transition-shadow duration-300 ease-in-out rounded-lg shadow-xs lg:h-12 lg:ml-10 hover:cursor-pointer hover:shadow-lg shadow-primary"
         /></a>
-        <!-- <a class="btn btn-ghost text-xl" href="/">GRS-enterprise</a> -->
       </div>
       <div class="navbar-end lg:flex">
-        <ul class="menu menu-horizontal hidden lg:flex">
-          <li>
-            <a href="/our-company" :class="isCurrentRoute('/our-company')">Our Company</a>
-          </li>
-          <li>
-            <a href="/partners" :class="isCurrentRoute('/partners')">Partners</a>
-          </li>
-          <li class="dropdown dropdown-hover dropdown-center">
-            <a href="/services" :class="isCurrentRoute('/services')"
-              >Services <span><Icon icon="mdi-light:chevron-down" class="h-5 w-5" /></span
-            ></a>
-            <ul class="menu menu-sm dropdown-content bg-base-100 w-52 rounded-box shadow">
-              <li>
-                <a
-                  href="/services/construction-and-design"
-                  :class="isCurrentRoute('/services/construction-and-design')"
-                >
-                  <Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/information-technology"
-                  :class="isCurrentRoute('/services/information-technology')"
-                >
-                  <Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/logistics-and-supply-chain"
-                  :class="isCurrentRoute('/services/logistics-and-supply-chain')"
-                >
-                  <Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="/contact" :class="isCurrentRoute('/contact')">Contact</a>
+        <ul class="hidden menu menu-horizontal lg:flex">
+          <li v-for="item in navigationMenu" :key="item.path">
+            <a v-if="item.name !== 'Services'" :href="item.path" :class="isCurrentRoute(item.path)">{{ item.name }}</a>
+            <div v-else class="dropdown dropdown-hover dropdown-center">
+              <a :href="item.path" :class="isCurrentRoute(item.path) + ' flex items-center'"
+                >{{ item.name }} <span><Icon icon="mdi-light:chevron-down" class="w-5 h-5" /></span
+              ></a>
+              <ul class="shadow menu menu-sm dropdown-content w-52 bg-base-100 rounded-box">
+                <li v-for="service in servicesMenu" :key="service.path">
+                  <a :href="service.path" :class="isCurrentRoute(service.path)">
+                    <Icon :icon="service.icon" class="w-5 h-5" />{{ service.name }}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
         <select
@@ -175,62 +149,14 @@ onMounted(() => {
           <option value="kh">ភាសាខ្មែរ</option>
         </select>
 
-        <div class="dropdown dropdown-left hidden">
-          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h7"
-              />
-            </svg>
-          </div>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-70 p-2 shadow"
-          >
-            <li><a href="/our-company">Our Company</a></li>
-            <li><a href="/partners">Partners</a></li>
-            <li>
-              <a href="/services"> Services</a>
-              <ul class="p-2">
-                <li>
-                  <a href="/services/construction-and-design"
-                    ><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a
-                  >
-                </li>
-                <li>
-                  <a href="/services/information-technology"
-                    ><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology</a
-                  >
-                </li>
-                <li>
-                  <a href="/services/logistics-and-supply-chain"
-                    ><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a
-                  >
-                </li>
-              </ul>
-            </li>
-
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="drawer drawer-end lg:hidden p-0 w-10 ml-2">
+        <div class="w-10 p-0 ml-2 drawer drawer-end lg:hidden">
           <input id="my-drawer" type="checkbox" class="drawer-toggle" />
           <div class="drawer-content">
-            <!-- Page content here -->
             <label for="my-drawer" class="btn btn-ghost btn-circle drawer-button">
               <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  class="w-5 h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -246,44 +172,19 @@ onMounted(() => {
           </div>
           <div class="drawer-side">
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-            <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
-              <li>
-                <a href="/our-company" :class="isCurrentRoute('/our-company')">Our Company</a>
-              </li>
-              <li>
-                <a href="/partners" :class="isCurrentRoute('/partners')">Partners</a>
-              </li>
-              <li>
-                <a href="/services" :class="isCurrentRoute('/services')"> Services</a>
-                <ul class="p-2">
-                  <li>
-                    <a
-                      href="/services/construction-and-design"
-                      :class="isCurrentRoute('/services/construction-and-design')"
-                    >
-                      <Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/services/information-technology"
-                      :class="isCurrentRoute('/services/information-technology')"
-                    >
-                      <Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/services/logistics-and-supply-chain"
-                      :class="isCurrentRoute('/services/logistics-and-supply-chain')"
-                    >
-                      <Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="/contact" :class="isCurrentRoute('/contact')">Contact</a>
+            <ul class="min-h-full p-4 menu bg-base-100 text-base-content w-80">
+              <li v-for="item in navigationMenu" :key="item.path">
+                <a v-if="item.name !== 'Services'" :href="item.path" :class="isCurrentRoute(item.path)">{{ item.name }}</a>
+                <div v-else>
+                  <a :href="item.path" :class="isCurrentRoute(item.path)">{{ item.name }}</a>
+                  <ul class="p-2">
+                    <li v-for="service in servicesMenu" :key="service.path">
+                      <a :href="service.path" :class="isCurrentRoute(service.path)">
+                        <Icon :icon="service.icon" class="w-5 h-5" />{{ service.name }}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
@@ -292,30 +193,27 @@ onMounted(() => {
     </div>
     <div
       v-if="!isNotFound && pageTitle"
-      class="w-full h-15 bg-primary flex items-center align-center"
+      class="flex items-center w-full h-15 bg-primary align-center"
       data-aos="fade-in"
     >
-      <div class="container mx-auto flex items-center align-center">
-        <div class="w-full flex items-center align-center">
-          <h1 class="lg:text-3xl text-xl font-bold text-base-100 text-center w-full">
+      <div class="container flex items-center mx-auto align-center">
+        <div class="flex items-center w-full align-center">
+          <h1 class="w-full text-xl font-bold text-center lg:text-3xl text-base-100">
             {{ pageTitle }}
           </h1>
         </div>
       </div>
     </div>
-    <main class="flex mx-auto flex-grow w-full h-full items-center">
+    <main class="flex items-center flex-grow w-full h-full mx-auto">
       <RouterView></RouterView>
     </main>
 
     <footer
-      class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10"
+      class="p-10 rounded footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content"
     >
-      <nav class="grid grid-cols-2 lg:grid-cols-6 gap-4" v-motion-fade-visible>
+      <nav class="grid grid-cols-2 gap-4 lg:grid-cols-6" v-motion-fade-visible>
         <a class="link link-hover" href="/">Home</a>
-        <a class="link link-hover" href="/our-company">Our Company</a>
-        <a class="link link-hover" href="/partners">Partners</a>
-        <a class="link link-hover" href="/services">Services</a>
-        <a class="link link-hover" href="/contact">Contact</a>
+        <a v-for="item in navigationMenu" :key="item.path" class="link link-hover" :href="item.path">{{ item.name }}</a>
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4" v-motion-fade-visible>
