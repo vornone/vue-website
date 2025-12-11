@@ -1,0 +1,198 @@
+export type ServiceItem = {
+  name: string
+  description: string
+  image: string
+  url: string
+  tags: string[]
+}
+
+export const itServices: ServiceItem[] = [
+  {
+    name: 'Customized Solutions',
+    description:
+      "We provide customized solutions to match your business's unique needs. Our team collaborates with you closely, whether you're importing or exporting, to achieve your goals accurately.",
+    image:
+      'https://images.unsplash.com/photo-1601897690942-bcacbad33e55?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['IT', 'Solution'],
+  },
+  {
+    name: 'Global Network, Local Expertise',
+    description:
+      'We use our worldwide network to deliver goods quickly and efficiently. Our local knowledge helps us smoothly handle trade regulations, offering you a straightforward experience.',
+    image:
+      'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['IT', 'Solution'],
+  },
+  {
+    name: 'Transparent Pricing',
+    description:
+      'Our pricing is clear and fair, with a transparent approach that avoids hidden fees, guaranteeing you get great value. Our competitive prices match the high-quality, sustainable products we provide.',
+    image:
+      'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['IT', 'Solution'],
+  },
+]
+
+export const logisticsServices: ServiceItem[] = [
+  {
+    name: 'Customized Solutions',
+    description:
+      "We provide customized solutions to match your business's unique needs. Our team collaborates with you closely, whether you're importing or exporting, to achieve your goals accurately.",
+    image:
+      'https://images.unsplash.com/photo-1601897690942-bcacbad33e55?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['Solution'],
+  },
+  {
+    name: 'Global Network, Local Expertise',
+    description:
+      'We use our worldwide network to deliver goods quickly and efficiently. Our local knowledge helps us smoothly handle trade regulations, offering you a straightforward experience.',
+    image:
+      'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['Networking', 'Solution'],
+  },
+  {
+    name: 'Transparent Pricing',
+    description:
+      'Our pricing is clear and fair, with a transparent approach that avoids hidden fees, guaranteeing you get great value. Our competitive prices match the high-quality, sustainable products we provide.',
+    image:
+      'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['Solution'],
+  },
+]
+
+export const itPageServices: ServiceItem[] = [
+  {
+    name: 'SharePoint Solutions',
+    description:
+      'Expertise in SharePoint deployment, custom development, and workflow optimization.',
+    image:
+      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['IT', 'Solution'],
+  },
+  {
+    name: 'Application Development',
+    description:
+      'Custom applications designed to meet unique business needs, enhancing functionality and user engagement.',
+    image:
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Design', 'IT', 'Programming'],
+  },
+  {
+    name: 'Network Security',
+    description:
+      'Robust security measures to protect network integrity and prevent data breaches.',
+    image:
+      'https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Programming', 'Network', 'Security'],
+  },
+  {
+    name: 'Data Analytics and BI',
+    description:
+      'Transforming raw data into actionable insights using advanced analytics and business intelligence tools.',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Design', 'Solution'],
+  },
+  {
+    name: 'Cloud Services',
+    description: 'Assistance with cloud migration, management, and optimization.',
+    image:
+      'https://images.unsplash.com/photo-1605907126332-53b63528ce99?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Security', 'Network', 'Programming'],
+  },
+  {
+    name: 'Cybersecurity Enhancements',
+    description:
+      'Comprehensive security assessments and solutions to safeguard digital assets.',
+    image:
+      'https://images.unsplash.com/photo-1590065707046-4fde65275b2e?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Security', 'Programming', 'Network'],
+  },
+  {
+    name: 'Systems Integration',
+    description:
+      'Seamless integration of various IT systems and software to improve workflow and efficiency.',
+    image:
+      'https://images.unsplash.com/photo-1498409785966-ab341407de6e?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Engineering', 'Network', 'Security'],
+  },
+  {
+    name: 'Managed IT Services',
+    description:
+      'Full-service IT management, including monitoring, support, and maintenance.',
+    image:
+      'https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['IT', 'Programming', 'Security'],
+  },
+]
+
+export const constructionServices: ServiceItem[] = [
+  {
+    name: 'Master Plan Design',
+    description:
+      'Our creative process encompasses multiple phases, combining space, geometry, and artistry. We aim to establish the needs and foundations necessary for creating a livable space using specific solutions and ingenuity.',
+    image:
+      'https://images.unsplash.com/photo-1524666037164-2f32a6c1dfea?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service1',
+    tags: ['Design', 'Construction'],
+  },
+  {
+    name: 'Architectural Design',
+    description:
+      'We have directly proposal masterplan project for our client. As our expertise aligns with our clients’ needs for flexibility of design, scalability and accuracy of cost estimation, and in-depth knowledge of real estate development trends.',
+    image:
+      'https://images.unsplash.com/photo-1614595737766-4d7e1fd1406f?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Design', 'Construction'],
+  },
+  {
+    name: 'Interior Design',
+    description:
+      'Our approach to refine material selection, up-to-date catalog and close engagement with local and international supplier help guide us and our client into a interior space that is full of unique features.',
+    image:
+      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Design', 'Construction'],
+  },
+  {
+    name: '3D Visualization and Virtual Reality',
+    description:
+      'We help create visual images and vr representations of our architectural designs, which are crucial parts of our design process. These representations allow designer, contractor and clients to clearly see and understand a project before it is built.',
+    image:
+      'https://images.unsplash.com/photo-1617802690658-1173a812650d?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Design', 'Construction'],
+  },
+  {
+    name: '3d Animation',
+    description:
+      'We assist our clients in producing informative, educational, and insightful media. This content is designed to effectively engage and attract potential investors and customers, providing them with valuable information and understanding of our clients’ offerings and market position',
+    image:
+      'https://images.unsplash.com/photo-1616344787023-a1829b69beea?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Design', 'Construction'],
+  },
+  {
+    name: 'Interior Decor Fitting Out',
+    description:
+      'we specialize in transforming spaces with tailored design solutions. We offer high-quality materials, craftsmanship, and seamless installations, creating functional, aesthetic environments for residential, commercial, and office spaces.',
+    image:
+      'https://images.unsplash.com/photo-1509805225007-73e8ba4b5be8?auto=format&fit=crop&w=800',
+    url: 'https://example.com/service2',
+    tags: ['Design', 'Fitting Out', 'Construction'],
+  },
+]

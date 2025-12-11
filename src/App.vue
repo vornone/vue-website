@@ -8,6 +8,7 @@ import 'aos/dist/aos.css'
 import AOS from 'aos'
 import grsLogo from '@/assets/logos/grs-logo.png'
 import { setLanguage } from '@/functions/setLanguage'
+import { primaryNav, footerLinks } from '@/data/navigation'
 // import { supabase } from './lib/supabaseClient'
 // Define supported locales type
 type SupportedLocale = 'en' | 'kh'
@@ -43,6 +44,7 @@ const pageTitle = computed(() => {
 })
 // Theme state
 const isDarkTheme = ref(false)
+const servicesOpen = ref(false)
 const isActive = (path: string) => {
   return route.path === path || route.path.startsWith(path + '/')
 }
@@ -123,46 +125,33 @@ onMounted(() => {
       </div>
       <div class="navbar-end lg:flex">
         <ul class="menu menu-horizontal hidden lg:flex">
-          <li>
-            <a href="/our-company" :class="isCurrentRoute('/our-company')">Our Company</a>
-          </li>
-          <li>
-            <a href="/partners" :class="isCurrentRoute('/partners')">Partners</a>
-          </li>
-          <li class="dropdown dropdown-hover dropdown-center">
-            <a href="/services" :class="isCurrentRoute('/services')"
-              >Services <span><Icon icon="mdi-light:chevron-down" class="h-5 w-5" /></span
-            ></a>
-            <ul class="menu menu-sm dropdown-content bg-base-100 w-52 rounded-box shadow">
-              <li>
-                <a
-                  href="/services/construction-and-design"
-                  :class="isCurrentRoute('/services/construction-and-design')"
-                >
-                  <Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/information-technology"
-                  :class="isCurrentRoute('/services/information-technology')"
-                >
-                  <Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/logistics-and-supply-chain"
-                  :class="isCurrentRoute('/services/logistics-and-supply-chain')"
-                >
-                  <Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="/contact" :class="isCurrentRoute('/contact')">Contact</a>
-          </li>
+          <template v-for="item in primaryNav" :key="item.path">
+            <li v-if="!item.children">
+              <a :href="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</a>
+            </li>
+            <li
+              v-else
+              class="dropdown dropdown-center"
+              :class="{ 'dropdown-open': servicesOpen }"
+              @mouseenter="servicesOpen = true"
+              @mouseleave="servicesOpen = false"
+              @focusin="servicesOpen = true"
+              @focusout="servicesOpen = false"
+            >
+              <a :href="item.path" :class="isCurrentRoute(item.path)" tabindex="0">
+                {{ item.label }}
+                <span><Icon icon="mdi-light:chevron-down" class="h-5 w-5" role="button" /></span>
+              </a>
+              <ul class="menu menu-sm dropdown-content bg-base-100 w-52 rounded-box shadow" tabindex="-1">
+                <li v-for="child in item.children" :key="child.path">
+                  <a :href="child.path" :class="isCurrentRoute(child.path)">
+                    <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
+                    {{ child.label }}
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </template>
         </ul>
         <select
           defaultValue="en"
@@ -192,34 +181,21 @@ onMounted(() => {
               />
             </svg>
           </div>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-70 p-2 shadow"
-          >
-            <li><a href="/our-company">Our Company</a></li>
-            <li><a href="/partners">Partners</a></li>
-            <li>
-              <a href="/services"> Services</a>
-              <ul class="p-2">
-                <li>
-                  <a href="/services/construction-and-design"
-                    ><Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design</a
-                  >
-                </li>
-                <li>
-                  <a href="/services/information-technology"
-                    ><Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology</a
-                  >
-                </li>
-                <li>
-                  <a href="/services/logistics-and-supply-chain"
-                    ><Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain</a
-                  >
-                </li>
-              </ul>
-            </li>
-
-            <li><a href="/contact">Contact</a></li>
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-70 p-2 shadow">
+            <template v-for="item in primaryNav" :key="item.path">
+              <li v-if="!item.children"><a :href="item.path">{{ item.label }}</a></li>
+              <li v-else>
+                <a :href="item.path">{{ item.label }}</a>
+                <ul class="p-2">
+                  <li v-for="child in item.children" :key="child.path">
+                    <a :href="child.path">
+                      <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
+                      {{ child.label }}
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </template>
           </ul>
         </div>
         <div class="drawer drawer-end lg:hidden p-0 w-10 ml-2">
@@ -247,44 +223,22 @@ onMounted(() => {
           <div class="drawer-side">
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
             <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
-              <li>
-                <a href="/our-company" :class="isCurrentRoute('/our-company')">Our Company</a>
-              </li>
-              <li>
-                <a href="/partners" :class="isCurrentRoute('/partners')">Partners</a>
-              </li>
-              <li>
-                <a href="/services" :class="isCurrentRoute('/services')"> Services</a>
-                <ul class="p-2">
-                  <li>
-                    <a
-                      href="/services/construction-and-design"
-                      :class="isCurrentRoute('/services/construction-and-design')"
-                    >
-                      <Icon icon="mdi-light:home" class="h-5 w-5" />Construction & Design
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/services/information-technology"
-                      :class="isCurrentRoute('/services/information-technology')"
-                    >
-                      <Icon icon="mdi-light:content-save" class="h-5 w-5" />Information Technology
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/services/logistics-and-supply-chain"
-                      :class="isCurrentRoute('/services/logistics-and-supply-chain')"
-                    >
-                      <Icon icon="mdi-light:truck" class="h-5 w-5" />Logistics & Supply Chain
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="/contact" :class="isCurrentRoute('/contact')">Contact</a>
-              </li>
+              <template v-for="item in primaryNav" :key="item.path">
+                <li v-if="!item.children">
+                  <a :href="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</a>
+                </li>
+                <li v-else>
+                  <a :href="item.path" :class="isCurrentRoute(item.path)"> {{ item.label }}</a>
+                  <ul class="p-2">
+                    <li v-for="child in item.children" :key="child.path">
+                      <a :href="child.path" :class="isCurrentRoute(child.path)">
+                        <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
+                        {{ child.label }}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </template>
             </ul>
           </div>
         </div>
@@ -311,11 +265,9 @@ onMounted(() => {
       class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10"
     >
       <nav class="grid grid-cols-2 lg:grid-cols-6 gap-4" v-motion-fade-visible>
-        <a class="link link-hover" href="/">Home</a>
-        <a class="link link-hover" href="/our-company">Our Company</a>
-        <a class="link link-hover" href="/partners">Partners</a>
-        <a class="link link-hover" href="/services">Services</a>
-        <a class="link link-hover" href="/contact">Contact</a>
+        <a v-for="link in footerLinks" :key="link.path" class="link link-hover" :href="link.path">
+          {{ link.label }}
+        </a>
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4" v-motion-fade-visible>
