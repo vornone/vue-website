@@ -281,9 +281,9 @@ onMounted(() => {
     </main>
 
     <footer
-      class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10"
+      class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10 "
     >
-      <nav class="grid grid-cols-2 lg:grid-cols-6 gap-4" v-motion-fade-visible>
+      <nav class="grid grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center lg:w-1/3 " v-motion-fade-visible>
         <RouterLink v-for="link in footerLinks" :key="link.path" class="link link-hover" :to="link.path">
           {{ link.label }}
         </RouterLink>
