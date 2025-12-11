@@ -1,0 +1,1 @@
+@keyframes infinite-scroll{0%{transform:translate(0)}to{transform:translate(-100%)}}.animate-infinite-scroll{animation:infinite-scroll 25s linear infinite}
