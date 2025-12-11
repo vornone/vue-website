@@ -8,7 +8,13 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx(), vueDevTools(), tailwindcss(), vueRouter()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    vueDevTools(),
+    tailwindcss(),
+    vueRouter({ importMode: 'sync' }),
+  ],
   base: '/vue-website/',
   resolve: {
     alias: {

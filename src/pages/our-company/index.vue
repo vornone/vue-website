@@ -101,6 +101,7 @@
 <script lang="ts">
 import 'aos/dist/aos.css'
 import AOS from 'aos'
+import { subsidiaries, teamDetails } from '@/data/company'
 AOS.init()
 export default {
   methods: {
@@ -110,19 +111,9 @@ export default {
   },
   data() {
     return {
-      subsidiaries: [] as import('@/data/company').Subsidiary[],
-      teamDetails: [] as import('@/data/company').TeamMember[],
+      subsidiaries,
+      teamDetails,
     }
-  },
-  created() {
-    import('@/data/company').then((m) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      this.subsidiaries = m.subsidiaries as unknown as typeof m.subsidiaries
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      this.teamDetails = m.teamDetails as unknown as typeof m.teamDetails
-    })
   },
 }
 </script>

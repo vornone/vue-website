@@ -22,6 +22,9 @@ I made it completely free available for anyone who wants to explore or adapt it.
     Get the Template
   </button>
 </a>
+<div class="tooltip ml-5 " data-tip="where are you going? This is the demo..">
+  <button class="btn shadow-xs shadow-primary">Go to demo</button>
+</div>
           <p class="py-6"></p>
         </div>
         <div

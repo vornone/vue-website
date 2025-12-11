@@ -67,24 +67,15 @@
 <script lang="ts">
 import 'aos/dist/aos.css'
 import AOS from 'aos'
+import { partnerDetail, subsidiaries } from '@/data/company'
 AOS.init()
 
 export default {
   data() {
     return {
-      subsidiaries: [] as import('@/data/company').Subsidiary[],
-      partnerDetail: [] as import('@/data/company').PartnerDetail[],
+      subsidiaries,
+      partnerDetail,
     }
-  },
-  created() {
-    import('@/data/company').then((m) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      this.subsidiaries = m.subsidiaries as unknown as typeof m.subsidiaries
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      this.partnerDetail = m.partnerDetail as unknown as typeof m.partnerDetail
-    })
   },
 }
 </script>

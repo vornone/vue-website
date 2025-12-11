@@ -49,10 +49,32 @@ const isActive = (path: string) => {
   return route.path === path || route.path.startsWith(path + '/')
 }
 const isCurrentRoute = (path: string) => {
-  return route.path === path || route.path.startsWith(path + '/')
+  // Remove /vue-website prefix from path if it exists for comparison
+  const normalizedPath = path.startsWith('/vue-website') ? path.replace('/vue-website', '') : path
+  const isMatch = route.path === normalizedPath || route.path.startsWith(normalizedPath + '/')
+  return isMatch
     ? 'underline underline-offset-4 decoration-2 decoration-primary'
     : ''
 }
+
+// Check if any child route is active for parent highlighting
+const isParentActive = (item: any) => {
+  if (!item.children) return false
+  const result = item.children.some((child: any) => {
+    // Remove /vue-website prefix from child path if it exists for comparison
+    const normalizedChildPath = child.path.startsWith('/vue-website') ? child.path.replace('/vue-website', '') : child.path
+    const match = route.path === normalizedChildPath || route.path.startsWith(normalizedChildPath + '/')
+    return match
+  })
+  return result
+}
+
+// Debug output
+watch(() => route.path, (newPath) => {
+  console.log('Current route changed to:', newPath)
+  console.log('Navigation items:', primaryNav)
+}, { immediate: true })
+
 // Function to toggle theme
 const toggleTheme = () => {
   isDarkTheme.value = !isDarkTheme.value
@@ -115,39 +137,39 @@ onMounted(() => {
             />
           </svg>
         </label>
-        <a href="/"
+        <RouterLink to="/"
           ><img
             :src="grsLogo"
             alt="GRS-logo"
             class="lg:h-12 h-10 lg:ml-10 ml-2 hover:cursor-pointer hover:shadow-lg shadow-primary transition-shadow duration-300 ease-in-out rounded-lg shadow-xs"
-        /></a>
+        /></RouterLink>
         <!-- <a class="btn btn-ghost text-xl" href="/">GRS-enterprise</a> -->
       </div>
       <div class="navbar-end lg:flex">
         <ul class="menu menu-horizontal hidden lg:flex">
           <template v-for="item in primaryNav" :key="item.path">
             <li v-if="!item.children">
-              <a :href="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</a>
+              <RouterLink :to="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</RouterLink>
             </li>
             <li
-  v-else
-  class="dropdown dropdown-hover dropdown-center"
-  tabindex="0"
->
-  <a :href="item.path" :class="isCurrentRoute(item.path)">
-    {{ item.label }}
-    <Icon icon="mdi-light:chevron-down" class="h-5 w-5" />
-  </a>
+              v-else
+              class="dropdown dropdown-hover dropdown-center"
+              tabindex="0"
+            >
+              <RouterLink :to="item.path" :class="isCurrentRoute(item.path) || (isParentActive(item) ? 'underline underline-offset-4 decoration-2 decoration-primary' : '')">
+                {{ item.label }}
+                <Icon icon="mdi-light:chevron-down" class="h-5 w-5" />
+              </RouterLink>
 
-  <ul class="dropdown-content menu bg-base-100 w-60 rounded-box shadow top-5 shadow-xs shadow-primary">
-    <li v-for="child in item.children" :key="child.path">
-      <a :href="child.path" :class="isCurrentRoute(child.path)">
-        <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
-        {{ child.label }}
-      </a>
-    </li>
-  </ul>
-</li>
+              <ul class="dropdown-content menu bg-base-100 w-60 rounded-box shadow top-5 shadow-xs shadow-primary">
+                <li v-for="child in item.children" :key="child.path">
+                  <RouterLink :to="child.path" :class="isCurrentRoute(child.path)">
+                    <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
+                    {{ child.label }}
+                  </RouterLink>
+                </li>
+              </ul>
+            </li>
           </template>
         </ul>
         <select
@@ -180,15 +202,15 @@ onMounted(() => {
           </div>
           <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-70 p-2 shadow">
             <template v-for="item in primaryNav" :key="item.path">
-              <li v-if="!item.children"><a :href="item.path">{{ item.label }}</a></li>
+              <li v-if="!item.children"><RouterLink :to="item.path">{{ item.label }}</RouterLink></li>
               <li v-else>
-                <a :href="item.path">{{ item.label }}</a>
+                <RouterLink :to="item.path">{{ item.label }}</RouterLink>
                 <ul class="p-2">
                   <li v-for="child in item.children" :key="child.path">
-                    <a :href="child.path">
+                    <RouterLink :to="child.path">
                       <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
                       {{ child.label }}
-                    </a>
+                    </RouterLink>
                   </li>
                 </ul>
               </li>
@@ -222,16 +244,16 @@ onMounted(() => {
             <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
               <template v-for="item in primaryNav" :key="item.path">
                 <li v-if="!item.children">
-                  <a :href="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</a>
+                  <RouterLink :to="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</RouterLink>
                 </li>
                 <li v-else>
-                  <a :href="item.path" :class="isCurrentRoute(item.path)"> {{ item.label }}</a>
+                  <RouterLink :to="item.path" :class="isCurrentRoute(item.path) || (isParentActive(item) ? 'underline underline-offset-4 decoration-2 decoration-primary' : '')"> {{ item.label }}</RouterLink>
                   <ul class="p-2">
                     <li v-for="child in item.children" :key="child.path">
-                      <a :href="child.path" :class="isCurrentRoute(child.path)">
+                      <RouterLink :to="child.path" :class="isCurrentRoute(child.path)">
                         <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
                         {{ child.label }}
-                      </a>
+                      </RouterLink>
                     </li>
                   </ul>
                 </li>
@@ -262,9 +284,9 @@ onMounted(() => {
       class="footer footer-horizontal footer-center bg-base-200 bg-opacity-10 text-base-content rounded p-10"
     >
       <nav class="grid grid-cols-2 lg:grid-cols-6 gap-4" v-motion-fade-visible>
-        <a v-for="link in footerLinks" :key="link.path" class="link link-hover" :href="link.path">
+        <RouterLink v-for="link in footerLinks" :key="link.path" class="link link-hover" :to="link.path">
           {{ link.label }}
-        </a>
+        </RouterLink>
       </nav>
       <nav>
         <div class="grid grid-flow-col gap-4" v-motion-fade-visible>

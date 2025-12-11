@@ -33,7 +33,6 @@ export const primaryNav: NavItem[] = [
 ]
 
 export const footerLinks: { label: string; path: string }[] = [
-  { label: 'Home', path: '/' },
   { label: 'Our Company', path: '/our-company' },
   { label: 'Partners', path: '/partners' },
   { label: 'Services', path: '/services' },

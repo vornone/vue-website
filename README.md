@@ -1,45 +1,59 @@
-# vue-project
+# GRS Enterprise Vue Website
 
-This template should help get you started developing with Vue 3 in Vite.
+Production-ready Vue 3 + Vite project configured for deployment to GitHub Pages under the project path `vue-website`.
 
-## Recommended IDE Setup
+## Prerequisites
+- Node.js 18+ (recommended)
+- npm 9+
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Install
+- `npm install`
 
-## Type Support for `.vue` Imports in TS
+## Develop
+- `npm run dev`
+- Open the URL printed by the dev server. With the configured base, you can also open `http://localhost:5173/vue-website/`.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Type Check & Lint
+- `npm run type-check`
+- `npm run lint`
 
-## Customize configuration
+## Build
+- `npm run build`
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Preview (production-like)
+- `npm run preview`
+- Open the URL printed (typically `http://localhost:4173/vue-website/`).
 
-## Project Setup
+## Deploy to GitHub Pages
+This repo is configured for project pages at `https://<username>.github.io/<repo>/`.
 
-```sh
-npm install
-```
+1. Ensure the base in `vite.config.ts` matches your repository name:
+   - `base: '/vue-website/'`
+2. Build the site:
+   - `npm run build`
+3. Publish the `dist` folder to the `gh-pages` branch:
+   - `npm run deploy`
+4. In GitHub → Settings → Pages, set:
+   - Source: `gh-pages` branch, `/` (root)
+5. Visit your site:
+   - `https://<username>.github.io/vue-website/#/`
 
-### Compile and Hot-Reload for Development
+## URL Examples (Hash History)
+- Home: `https://<username>.github.io/vue-website/#/`
+- Services: `https://<username>.github.io/vue-website/#/services`
+- Our Company: `https://<username>.github.io/vue-website/#/our-company`
+- Partners: `https://<username>.github.io/vue-website/#/partners`
+- Contact: `https://<username>.github.io/vue-website/#/contact`
 
-```sh
-npm run dev
-```
+## Troubleshooting
+- 404 on GitHub Pages:
+  - Use hash history URLs (`#/...`) which do not require server rewrites.
+  - Confirm `vite.config.ts` `base` matches your repo name.
+  - Rebuild and redeploy; Pages may serve cached assets briefly.
+- 404 with `npx serve dist`:
+  - This static server does not mount under the configured base. Use `npm run preview` instead.
 
-### Type-Check, Compile and Minify for Production
+## Notes
+- Router uses hash history and `importMode: 'sync'` for reliable static hosting.
+- Favicon is served from `public/grs-logo.png` and referenced in `index.html` as `/grs-logo.png`.
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
