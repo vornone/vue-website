@@ -127,25 +127,27 @@ onMounted(() => {
         <ul class="menu menu-horizontal hidden lg:flex">
           <template v-for="item in primaryNav" :key="item.path">
             <li v-if="!item.children">
-              <a :href="item.path" :class="isCurrentRoute(item.path) +' cursor-pointer'">{{ item.label }}</a>
+              <a :href="item.path" :class="isCurrentRoute(item.path)">{{ item.label }}</a>
             </li>
             <li
-              v-else
+  v-else
+  class="dropdown dropdown-hover dropdown-center"
+  tabindex="0"
+>
+  <a :href="item.path" :class="isCurrentRoute(item.path)">
+    {{ item.label }}
+    <Icon icon="mdi-light:chevron-down" class="h-5 w-5" />
+  </a>
 
-            >
-              <a :href="item.path" :class="isCurrentRoute(item.path)" tabindex="0">
-                {{ item.label }}
-                <span><Icon icon="mdi-light:chevron-down" class="h-5 w-5" role="button" /></span>
-              </a>
-              <ul class="menu menu-sm dropdown-content bg-base-100 w-52 rounded-box shadow" tabindex="-1">
-                <li v-for="child in item.children" :key="child.path">
-                  <a :href="child.path" :class="isCurrentRoute(child.path)">
-                    <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
-                    {{ child.label }}
-                  </a>
-                </li>
-              </ul>
-            </li>
+  <ul class="dropdown-content menu bg-base-100 w-60 rounded-box shadow top-5 shadow-xs shadow-primary">
+    <li v-for="child in item.children" :key="child.path">
+      <a :href="child.path" :class="isCurrentRoute(child.path)">
+        <Icon v-if="child.icon" :icon="child.icon" class="h-5 w-5" />
+        {{ child.label }}
+      </a>
+    </li>
+  </ul>
+</li>
           </template>
         </ul>
         <select

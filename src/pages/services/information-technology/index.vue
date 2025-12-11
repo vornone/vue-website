@@ -11,10 +11,8 @@
         <div class="hero-content text-neutral-content text-center">
           <div class="max-w-full flex flex-col items-center justify-center w-1/2">
             <p class="mb-5 text-white">
-              orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt volutpat nisl
-              a blandit. Cras id diam maximus, consectetur arcu eget, venenatis nisl. Nunc
-              malesuada, enim et mattis vestibulum, justo diam iaculis sem, sed scelerisque ipsum ex
-              non leo. Sed luctus nulla quis est fringilla maximus.
+              lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt volutpat nisl
+              a blandit.
             </p>
             <button class="btn btn-primary text-base-100" @click="scrollToSection('designers')">
               Our Developers
@@ -27,9 +25,7 @@
       <h1 class="text-3xl text-center w-full">What we offer</h1>
       <h2 class="text-center lg:w-1/2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, ex nec vulputate
-        porta, nisl dui mattis nisl, a imperdiet turpis ligula non nulla. Morbi congue magna libero,
-        et finibus nisi lobortis in. Aenean maximus bibendum diam, nec pharetra risus molestie
-        placerat. Mauris lobortis eleifend maximus.
+        porta, nisl dui mattis nisl.
       </h2>
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4"
